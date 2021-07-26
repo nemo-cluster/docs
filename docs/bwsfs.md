@@ -3,7 +3,7 @@ title: bwSFS
 subtitle: Storage for Science Baden Württemberg
 ---
 
-![bwSFS – Storage for Science](/img/bwsfs-logo.png)
+![bwSFS – Storage for Science](img/bwsfs-logo.png)
 
 # Storage for Science Baden Württemberg
 
