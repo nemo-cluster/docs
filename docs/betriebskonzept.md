@@ -25,7 +25,7 @@ title: Betriebskonzept
 <!-- !!! note "TLP:WHITE"
     Disclosure not limited. -->
 
-Version | Datum      | Autor*innen     | Änderungen
+Version | Datum      | Autor\*innen     | Änderungen
 ------- | ---------- | --------------- | ----------
 0.4.4   | 21.06.2021 | MJ              | Anführungszeichen korrigiert.
 0.4.3   | 25.05.2021 | MJ,DvS          | Kleinere Textkorrekturen. Testglossar zu Tooltipps geändert.
@@ -52,22 +52,22 @@ in hierfür dedizierten Räumlichkeiten betrieben werden. Die
 Datenschränke werden vom RZ betreut und auf grundlegende
 Betriebsbereitschaft (Strom, Kühlung) überwacht. Es werden primär zwei
 große Speichersysteme genutzt, einerseits eine professionelle
-Storage-Appliance für administrative und Nutzer*innendaten,
+Storage-Appliance für administrative und Nutzer\*innendaten,
 andererseits ein schnelles paralleles Dateisystem für die Nutzung durch
 Compute-Jobs. Auf den Infrastrukturservern laufen diverse Dienste, die
 skriptgesteuert mit Ansible-Rezepten installiert und konfiguriert
 werden. Die Rechenknoten werden via netzwerkbasiertem Remote-Boot von
 dedizierten Infrastrukturservern zustandslos betrieben. Auf diesen
-Knoten werden die Jobs der Wissenschaftler*innen ausgeführt. Besonders
+Knoten werden die Jobs der Wissenschaftler\*innen ausgeführt. Besonders
 der Anspruch, Daten über längere Zeiträume hinweg in ihren Entstehungs-
 und Verarbeitungskontexten reproduzierbar zu halten, führte zu einer
 Komplementierung des traditionellen Betriebsmodells von HPC-Systemen um
 virtuelle Maschinen und Container. In diesen Virtualisierten (VFU) und
 Containerisieten (CFU) Forschungsumgebungen laufen die Anwendungen oder
-Umgebungen, die von den Wissenschafter*innen kontrolliert
+Umgebungen, die von den Wissenschafter\*innen kontrolliert
 werden.[^2][^3][^4]
 
-Innerhalb dieser Forschungsumgebungen haben Wissenschaftler*innen die
+Innerhalb dieser Forschungsumgebungen haben Wissenschaftler\*innen die
 Freiheit, Forschungsdaten und deren Kontext so zu abstrahieren, dass sie
 auf anderen Systemen weiter ausgeführt und reproduziert werden können.
 Mit VFUs und CFUs werden Hardware, Software und Dienste so entkoppelt,
@@ -82,16 +82,16 @@ beschreibt den Betrieb des bwForClusters NEMO.
 
 ## Ziele im Sinne der Informationssicherheit
 
-Kernanliegen des bwForClusters NEMO ist, Forscher*innen den Zugang zu
+Kernanliegen des bwForClusters NEMO ist, Forscher\*innen den Zugang zu
 Rechen- und Speicherkapazitäten zu geben. Als Schutzziel betrachtet, ist
 dies die Sicherstellung der *Verfügbarkeit* von Rechenressourcen, auf
-denen Forscher*innen ihre Rechenjobs ausführen. Als Dienstanbieter muss
+denen Forscher\*innen ihre Rechenjobs ausführen. Als Dienstanbieter muss
 das bwForCluster NEMO eine Verfügbarkeit bieten, die
-Wissenschaftler*innen Big-Data-Analysen über das Maß selbst gemanagter
+Wissenschaftler\*innen Big-Data-Analysen über das Maß selbst gemanagter
 oder dezentral in Forschungseinrichtung administrierten IT-Cluster
 hinaus ermöglicht.
 
-Für die Forscher*innen ist, um ihre Datenverarbeitung und Ergebnisse
+Für die Forscher\*innen ist, um ihre Datenverarbeitung und Ergebnisse
 reproduzierbar zu halten, eine *Integrität* von Daten auf Speicherebene
 notwendig. Für Integrität von Daten auf der von ihnen betriebenen
 Verarbeitungsschicht sind sie selbst verantwortlich.
@@ -130,11 +130,11 @@ einzelner Schichten besser zu isolieren. Besonders die im
 Wissenschaftsbereich hohe Erwartung an Verfügbarkeit lässt sich besser
 erreichen. Die Zahl der "Single Points of Failures" ist besser
 kontrollierbar. Die Standardisierung in der Steuerung der Hardware
-reduziert die Komplexität im Betrieb, die den Wissenschaftler*innen
+reduziert die Komplexität im Betrieb, die den Wissenschaftler\*innen
 gebotene Freiheit ist praktisch vollständig von der Betriebsschicht
 getrennt. Die Abstraktion reduziert Angriffsvektoren auf die
 Betriebsschicht, die durch Ereignisse auf der Ebene der
-Wissenschaftler*innen eröffnet werden.
+Wissenschaftler\*innen eröffnet werden.
 
 ## Dienstbeschreibung HPC
 
@@ -142,14 +142,14 @@ Es liegt eine Dienstbeschreibung für das HPC-Computing-Angebot des
 Rechenzentrums im Rahmen des allgemeinen Servicekatalogs vor. Diese kann
 online von den Seiten des Rechenzentrums abgerufen werden.[^7] Diese
 Dienstbeschreibung wird einem regelmäßigen Review-Prozess in der Runde
-der Abteilungsleiter*innen unterzogen.
+der Abteilungsleiter\*innen unterzogen.
 
 ## Betriebsmodell bwForCluster NEMO
 
 Das Betriebsmodell beschreibt konkrete Schritte des Deployments und der
 täglichen Produktion des HPC-Clusters. Hierzu wird eine Kombination aus
 administrativen Infrastruktur (Server) und von den
-Wisschenschaftler*inenn zu Berechnungen verwendeten Rechenknoten
+Wisschenschaftler\*inenn zu Berechnungen verwendeten Rechenknoten
 eingesetzt.
 
 ### Hardware und Dienste
@@ -184,8 +184,8 @@ Openstack-Dashboard wird der Transport mit HTTPS abgesichert.
 ##### SSH
 
 Dieser Dienst läuft auf allen Knoten und Servern. Mit ihm ist ein Login
-von Wissenschaftler*innen
-und Administrator*innen über die Eingabe von
+von Wissenschaftler\*innen
+und Administrator\*innen über die Eingabe von
 Nutzername und Dienst-Passwort oder einen SSH-Key möglich.
 
 ##### Scheduler
@@ -236,7 +236,7 @@ Der Monitoring-Server empfängt und speichert alle Log- und
 Protokoll-Dateien. Hierbei werden Login-Versuche, kritische Fehler und
 Hardware-Parameter protokolliert und teilweise visualisiert. Für
 einfache Parameter wie die Temperatur eines Knotens sind Grenzwerte
-definiert. Bei Überschreitung dieser werden die Administrator*innen des
+definiert. Bei Überschreitung dieser werden die Administrator\*innen des
 Clusters per Mail verständigt.
 
 ### Deployment
@@ -291,14 +291,14 @@ Patches auf den reservierten Knoten durchgetestet wurden, werden diese
 ### Updates und Sicherheit
 
 Bei allen Servern, die keinen direkten Zugriff durch die
-Wissenschaftler*innen erlauben, werden Updates bei den größeren
+Wissenschaftler\*innen erlauben, werden Updates bei den größeren
 Wartungen eingespielt, die üblicherweise ein bis zwei Mal im Jahr statt
 finden. Sollte eine außerordentliche Sicherheitslücke bestimmte Dienste
 betreffen, wird das Update sobald es verfügbar ist, eingespielt. Sollte
 hierzu ein Herunterfahren des Clusters notwendig werden, kann sich das
 Update um bis zu vier Tage verzögern. Das Vorgehen wird dann im
 eScience-Team unter Zuhilfenahme zusätzlicher IT-Experten diskutiert.
-Diese Wartungen werden an die Wissenschaftler*innen vorab kommuniziert.
+Diese Wartungen werden an die Wissenschaftler\*innen vorab kommuniziert.
 
 Bei den Login-, Vis- und Rechenknoten werden monatliche Updates
 eingespielt. Dabei findet ein Rolling-Update statt. Das Cluster wird
@@ -317,7 +317,7 @@ beträgt, ist ein reguläres Update spätestens nach vier Tagen beendet.
 
 ### Parallel- und HOME-Speicher
 
-Die HOME-Verzeichnisse der Nutzer*innen liegen auf dem Isilon-Speicher
+Die HOME-Verzeichnisse der Nutzer\*innen liegen auf dem Isilon-Speicher
 der Universität.[^13] Für die aktuell verarbeiteten wissenschaftlichen
 Daten dient ein zentraler Parallelspeicher, der auf BeeGFS
 aufsetzt.[^14] Anders als der Isilon-Speicher ist der parallele Speicher
@@ -329,31 +329,31 @@ auf dem bwSFS angeboten.[^15]
 
 Der Parallelspeicher ist neben dem bwForCluster NEMO ebenfalls in der
 ATLAS-Umgebung eingebunden. Diese beinhaltet das ATLAS-Cluster und die
-ATLAS-VFU.[^16] Dadurch können zusätzlich Nutzer*innen und
-Administrator*innen der Freiburger ATLAS-Gruppen auf diesen Speicher
+ATLAS-VFU.[^16] Dadurch können zusätzlich Nutzer\*innen und
+Administrator\*innen der Freiburger ATLAS-Gruppen auf diesen Speicher
 zugreifen.
 
-Nutzer*innen können in der Standardeinstellung nur ihre eigenen Daten
-einsehen und bearbeiten. Administrator*innen können alle Daten, sofern
+Nutzer\*innen können in der Standardeinstellung nur ihre eigenen Daten
+einsehen und bearbeiten. Administrator\*innen können alle Daten, sofern
 sie nicht Nutzer- oder Client-seitig verschlüsselt wurden, einsehen und
 bearbeiten. Beide Speicher werden nicht standardmäßig verschlüsselt.
 
 #### Workspaces
 
 Die Daten, die auf dem parallelen Speicher liegen, werden für die
-Berechnungen der Wissenschaftler*innen benötigt. Das Management der
-Daten wird durch die Forscher*innen in sogenannten "Workspaces"
-durchgeführt.[^17] Die Nutzer*innen müssen Workspaces anlegen, um den
+Berechnungen der Wissenschaftler\*innen benötigt. Das Management der
+Daten wird durch die Forscher\*innen in sogenannten "Workspaces"
+durchgeführt.[^17] Die Nutzer\*innen müssen Workspaces anlegen, um den
 parallelen Speicher verwenden zu können. Dabei kann ein Workspace
 maximal 100 Tage gültig sein. Es besteht jedoch die Möglichkeit, jeden
-Workspace 99 mal 100 Tage zu verlängern. Die Wissenschaftler*innen
+Workspace 99 mal 100 Tage zu verlängern. Die Wissenschaftler\*innen
 werden 7 Tage vor Ablauf eines Workspaces per Mail informiert.
 
 Es wird empfohlen, für unterschiedliche Unterprojekte und separate
 Berechnungen eigene Workspaces anzulegen. Jeder Workspace kann damit in
 einem späteren Schritt als separate Einheit oder Objekt mit Metadaten
 versehen in einem Wissenschaftsspeicher wie bwSFS gesichert werden.
-Sinnvolle Einheiten/Workspaces müssen durch die Wissenschaftler*innen
+Sinnvolle Einheiten/Workspaces müssen durch die Wissenschaftler\*innen
 selbst definiert werden.
 
 ### Netze
@@ -387,8 +387,6 @@ Das bwForCluster NEMO verwendet folgende Netze:
 10.20.40.0/21         NEMO: ATLAS-TEST-VFU
 ```
 
-
-
 Obige Netze sind jeweils voneinander getrennt. Lediglich die ATLAS-VFU
 und ATLAS-TEST-VFU können zusätzlich auf das NEMO-Netz `10.16.0.0/16`
 zugreifen. Das Cluster kann ansonsten nur über die öffentliche
@@ -404,15 +402,15 @@ verbunden.[^19]
 ### Zugang zur Ressource
 
 Zugang zum bwForCluster NEMO haben lediglich registrierte
-Forscher*innen. Antragsberechtigt sind nur Wissenschaftler*innen aus
+Forscher\*innen. Antragsberechtigt sind nur Wissenschaftler\*innen aus
 Baden-Württemberg. Die genauen Zugangskriterien und die einzelnen
 Schritte der Registrierungsprozedur sind im bwHPC-Wiki beschreiben.[^20]
-Für das bwForCluster NEMO muss von dem/der Wissenschaftler*in ein
+Für das bwForCluster NEMO muss von dem/der Wissenschaftler\*in ein
 separates Dienst-Passwort angelegt werden.
 
 Das Auslaufen und die Invalidierung von Accounts regelt jede Universität
 selbst. Der Nutzer hat danach keinen Zugriff mehr auf die Ressourcen.
-Die Daten der Nutzer*innen verbleiben jedoch so lange auf dem Cluster,
+Die Daten der Nutzer\*innen verbleiben jedoch so lange auf dem Cluster,
 bis die Ressource abgeschaltet wird oder die Anfrage einer berechtigten
 Person erfolgt. Es gibt derzeit keine festen Regeln diesbezüglich, so
 dass diese Frage einer genaueren Ausarbeitung Bedarf. Für das
@@ -427,7 +425,7 @@ folgenden Ordnungen zur Verfügung:
 
 ### Kontingentierung
 
-Die Wissenschaftler*innen sind im Sinne der gemeinschaftlichen
+Die Wissenschaftler\*innen sind im Sinne der gemeinschaftlichen
 DFG-Beantragung Stakeholder des bwForClusters NEMO. Zusätzlich gibt es
 Shareholder, die mit eigenen Mitteln Teile das Clusters mitfinanziert
 haben.[^24] Diesen stehen zusätzliche Anteile am Cluster zur Verfügung.
@@ -438,22 +436,22 @@ einer Gruppe jeweils der Verbrauch der letzten drei Monate mit ihrem
 "Share" verglichen. Ist der Verbrauch höher als der Share, der der
 Arbeitsgruppe zur Verfügung steht, werden die Jobs niedriger
 priorisiert, ist er niedriger als der verfügbare Share, werden die Jobs
-höher priorisiert. Wissenschaftler*innen können aber mehr Ressourcen
+höher priorisiert. Wissenschaftler\*innen können aber mehr Ressourcen
 verwenden, als ihnen aufgrund ihres Shares zustehen würden. Sie werden
 dadurch in Zukunft nur schlechter in der Warteschlange priorisiert. Es
 gibt lediglich eine maximale Anzahl an Ressourcen, die ein/e
-Wissenschaftler*in gleichzeitig in die Warteschlange stellen kann.
+Wissenschaftler\*in gleichzeitig in die Warteschlange stellen kann.
 
 ### Administration
 
-Administrator*innen verfügen über erweiterte Rechte. Sie haben Zugriff
-auf alle Daten der Nutzer*innen, sofern diese nicht zusätzlich
+Administrator\*innen verfügen über erweiterte Rechte. Sie haben Zugriff
+auf alle Daten der Nutzer\*innen, sofern diese nicht zusätzlich
 verschlüsselt werden. Der administrative Zugang wird bei Bedarf manuell
 gewährt und wird bei Ausscheiden, beziehungsweise wenn die Rechte nicht
 mehr benötigt werden, manuell entzogen. Derzeit wird ein Protokoll für
 die Administration entwickelt, das diesen Aspekt regelt. Die Einführung
 des Protokolls zum Ein- beziehungsweise Austritt von
-Administrator*innen ist für den Start des bwForClusters NEMO2 2022
+Administrator\*innen ist für den Start des bwForClusters NEMO2 2022
 geplant.
 
 ### Monitoring
@@ -476,25 +474,25 @@ geprüft, ob die Dienste noch korrekt funktionieren.
 
 Außerdem werden Hardware- sowie Softwareprobleme, Login- und
 Zugriffsversuche über `rsyslog` lokal auf der SSD und für die von den
-Wissenschaftler*innen erreichbaren Knoten wie Login-, Vis- und
+Wissenschaftler\*innen erreichbaren Knoten wie Login-, Vis- und
 Rechenknoten zusätzlich auf dem Monitoringserver in Dateien gespeichert.
 
 Der Speicherverbrauch im parallelen Dateisystem und den
 Home-Verzeichnissen wird mittels Quotas auf Nutzerebene durchgesetzt.
 Die Auslastung wird jeweils von den zuständigen Betreibern ermittelt.
 Bei Isilon ist das die Abteilung "Virtualisierung und
-Speichersysteme", beim BeeGFS machen das die Administrator*innen des
+Speichersysteme", beim BeeGFS machen das die Administrator\*innen des
 bwForClusters NEMO. "Workspaces" auf dem parallelen
 Wissenschaftsspeicher BeeGFS haben eine Laufzeit von 100 Tagen und
-müssen von den Wissenschaftler*innen mit einem Kommando manuell
+müssen von den Wissenschaftler\*innen mit einem Kommando manuell
 verlängert werden. Erfolgt das nicht, werden die Daten endgültig nach
 einer Wartezeit von sieben Tagen gelöscht.
 
 ## Verantwortlichkeiten
 
 Die Verantwortung für den Betrieb des bwForClusters NEMO liegt bei
-dem/der Leiter*in
-der Abteilung eScience. Diese/r berichtet der/dem Leiter*in
+dem/der Leiter\*in
+der Abteilung eScience. Diese/r berichtet der/dem Leiter\*in
 des Rechenzentrums der Universität Freiburg.
 
 ### Maschinensaal II (MSII)
@@ -502,12 +500,12 @@ des Rechenzentrums der Universität Freiburg.
 Der MSII sowie die darüber bereitgestellten Schränke werden von der
 Abteilung "Allgemeiner Betrieb" verantwortet. Das operative Geschäft
 sowie die organisatorischen Schnittstellen innerhalb des RZ sowie zu
-Nutzer*innen, die Ressourcen im Maschinensaal betreiben, werden in der
+Nutzer\*innen, die Ressourcen im Maschinensaal betreiben, werden in der
 "Maschinensaalbenutzungsordnung"[^27] für den Maschinensaal
 beschrieben. Die Nutzung der Server-Schränke wird im Dienstkatalog
 "Machine-Hosting"[^28] spezifiziert. Die
 Maschinensaalbenutzungsordnung bestimmt ebenfalls den physikalischen
-Zugriff der Administrator*innen des Clusters auf die Schränke und die
+Zugriff der Administrator\*innen des Clusters auf die Schränke und die
 darin eingebauten Maschinen.
 
 ## Referenzen
