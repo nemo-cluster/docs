@@ -119,3 +119,7 @@ nav:
     - Betriebskonzept: betriebskonzept.md
     - TOMs: toms.md
   - bwSFS: bwsfs.md
+  - Technologie-Sprints:
+    - Info: sprints.md
+    - Vorlage Alt: sprint-old.md
+    - Vorlage Neu: sprint-new.md
