@@ -25,7 +25,7 @@ title: Technisch Organisatorische Maßnahmen
 <!-- !!! note "TLP:WHITE"
     Disclosure not limited. -->
 
-Version | Datum      | Autor*innen     | Änderungen
+Version | Datum      | Autor\*innen     | Änderungen
 ------- | ---------- | --------------- | ----------
 0.4.1   | 21.06.2021 | MJ              | Buchstabendreher und Anführungszeichen korrigiert. eduPersonPrincipalName statt EPPN und eduPersonEntitlement statt Entitlement verwendet.
 0.4.0   | 26.05.2021 | MJ,JL           | Einleitung gelöscht. Text entspricht Passagen aus ADV-Vertragsentwurf.
@@ -57,15 +57,15 @@ Die Zugangskontrolle zum bwForCluster NEMO erfolgt über mehrere Stufen.
 Das genauen Verfahren ist im bwHPC-Wiki beschrieben[^2]. Die genauen
 Maßnahmen beinhalten:
 
-- Wissenschaftler*innen müssen von der Universität berechtigt sein,
+- Wissenschaftler\*innen müssen von der Universität berechtigt sein,
   die Ressource zu nutzen. Hierzu wird von den Universitäten das
   "Entitlement" `http://bwidm.de/entitlement/bwForCluster`
   vergeben[^3].
-- Wissenschaftler*innen müssen einen Projektantrag stellen
+- Wissenschaftler\*innen müssen einen Projektantrag stellen
   (Rechenvorhaben) oder sich einem bestehendem Projekt zuordnen[^4].
-- Wissenschaftler*innen müssen sich beim Cluster registrieren, dazu
+- Wissenschaftler\*innen müssen sich beim Cluster registrieren, dazu
   werden Daten beim jeweiligen Identity-Provider (IdP) abgefragt[^5].
-  Diese Daten können auch jederzeit von den Nutzer*innen abgefragt
+  Diese Daten können auch jederzeit von den Nutzer\*innen abgefragt
   werden[^6]. Hierzu gehören:
   - Name
   - E-Mail-Adresse
@@ -75,12 +75,12 @@ Maßnahmen beinhalten:
 - Der Zugang ist über eine Firewall auf Belwü-Netze beschränkt[^8].
   - Außerhalb dieser Netze ist der Zugriff nur über Jump-Hosts
     (beispielsweise Proxy-Jump) oder VPN möglich.
-- Wissenschaftler*innen haben Zugriff von außen über SSH mit
+- Wissenschaftler\*innen haben Zugriff von außen über SSH mit
   Nutzername und Dienst-Passwort beziehungsweise SSH-Schlüssel auf
   Login- und Visualisierungsknoten.
 - Zugang über das Openstack-Dashboard über HTTPS mit Nutzername und
   Dienst-Passwort.
-- Administrator*innen haben nur mit Nutzername und SSH-Schlüssel
+- Administrator\*innen haben nur mit Nutzername und SSH-Schlüssel
   Zugriff.
 - Eine Zwei-Faktor-Authentifizierung wird derzeit ausgerollt.
 - Der Zugang wird über Log-Dateien lokal und im Monitoring-Server
@@ -91,8 +91,8 @@ Maßnahmen beinhalten:
 Die Zugriffskontrolle erfolgt auf Ebene von Unix-Rechten und "Access
 Control Lists" (ACL). Folgende Regeln gelten:
 
-- Wissenschaftler*innen haben nur auf ihre eigenen Daten Zugriff.
-  Diese Berechtigungen können selbst für weitere Nutzer*innen,
+- Wissenschaftler\*innen haben nur auf ihre eigenen Daten Zugriff.
+  Diese Berechtigungen können selbst für weitere Nutzer\*innen,
   beispielsweise über ACLs, erweitert werden.
 - Administratoren haben auf alle Daten und Bereiche Zugriff, wenn sie
   nicht von Client- oder Nutzerseite verschlüsselt werden.
@@ -101,10 +101,10 @@ Control Lists" (ACL). Folgende Regeln gelten:
 - Testsysteme werden nur ausgewählten Personengruppen zur Verfügung
   gestellt und beeinträchtigen nicht den Produktivbetrieb.
 - Zentrales Benutzer-/Berechtigungs-Management folgt dem
-  Need-to-have-Prinzip für Wissenschaftler*innen, externen Support,
-  Projektmitarbeiter*innen im bwHPC, Testnutzer*innen und
-  Administrator*innen.
-- Die Wissenschafler*innen verlieren ihren Zugriff, sobald dieser von
+  Need-to-have-Prinzip für Wissenschaftler\*innen, externen Support,
+  Projektmitarbeiter\*innen im bwHPC, Testnutzer\*innen und
+  Administrator\*innen.
+- Die Wissenschafler\*innen verlieren ihren Zugriff, sobald dieser von
   der Universität entzogen wird beziehungsweise der Account nicht mehr
   gültig ist. Die Regeln, wann dies erfolgt, werden von den
   Universitäten festgelegt.
@@ -112,7 +112,7 @@ Control Lists" (ACL). Folgende Regeln gelten:
   werden manuell entzogen. Derzeit wird ein Protokoll für die
   Administration entwickelt, das diesen Aspekt regelt. Die Einführung
   des Protokolls zum Ein- beziehungsweise Austritt von
-  Administrator*innen ist für den Start des Nachfolgeclusters 2022
+  Administrator\*innen ist für den Start des Nachfolgeclusters 2022
   geplant.
 
 ### Trennungskontrolle
@@ -171,7 +171,7 @@ folgende Schutzmaßnahmen:
   unterbrechungsfreie Stromversorgung sowie Notstromversorgung.
 - Die Temperatur, Feuchtigkeit und Stromverbrauch der Maschinen und
   der Datenschränke werden überwacht.
-- Das HOME-Verzeichnis der Wissenschaftler*innen ist georedundant
+- Das HOME-Verzeichnis der Wissenschaftler\*innen ist georedundant
   gespeichert und bietet automatische Snapshots[^9].
 - Der Parallelspeicher ist mit RAID-6 abgesichert.
 - Der Zugriff auf die Login- und Vis-Knoten ist durch eine Firewall
@@ -179,9 +179,9 @@ folgende Schutzmaßnahmen:
   eine Firewall abgesichert. Die restlichen Komponenten sind nur
   Cluster-intern erreichbar. Ausfälle durch Angriffe externer Parteien
   können so minimiert werden.
-- Der Zugriff auf das bwForCluster NEMO ist nur Wissenschaftler*innen
+- Der Zugriff auf das bwForCluster NEMO ist nur Wissenschaftler\*innen
   aus baden-württembergischen Universitäten, wenigen
-  Administrator*innen und Support-Mitarbeitern erlaubt, was den
+  Administrator\*innen und Support-Mitarbeitern erlaubt, was den
   Angriffsvektor zusätzlich verkleinert.
 - Die Verfügbarkeit des bwForClusters NEMO wird überwacht.
 - Das Wiederanfahren des Systems kann nach "Ausfällen ohne
@@ -261,7 +261,7 @@ Abschnitt [Zugangskontrolle](#zugangskontrolle).
 [^5]: Siehe Dienst bwForCluster für genaue Beschreibung der abgefragten
     Daten: <https://www.bwidm.de/dienste.php>, besucht am 04.05.2021.
 
-[^6]: Wissenschaftler*innen aus Baden-Württemberg können sich
+[^6]: Wissenschaftler\*innen aus Baden-Württemberg können sich
     registrieren und danach ihre gespeicherten Daten auf der
     Registrierungsseite überprüfen:
     <https://bwservices.uni-freiburg.de/user/index.xhtml>, besucht am
