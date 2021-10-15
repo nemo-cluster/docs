@@ -6,6 +6,7 @@ site_description: >-
   Documents and Documentation for NEMO and HPC at the University of Freiburg.
 # Repository
 repo_url: https://github.com/nemo-cluster/docs
+edit_uri: tree/main/docs/
 
 # Copyright
 copyright: Copyright &copy; 2021 eScience, RZ, Uni Freiburg
@@ -123,3 +124,11 @@ nav:
     - Info: sprints.md
     - Vorlage Alt: sprint-old.md
     - Vorlage Neu: sprint-new.md
+  - NEMO Mediawiki Translation:
+    - NEMO: nemo/Category:BwForCluster.md
+    - Login: nemo/BwForCluster_NEMO_Login.md
+    - Support: nemo/BwForCluster_NEMO_Support.md
+    - Acknowledgement: nemo/BwForCluster_NEMO_Acknowledgement.md
+    - Hardware and Architecture: nemo/BwForCluster_NEMO_Hardware_and_Architecture.md
+    - Batch Jobs: nemo/Batch_Jobs_Moab.md
+    - NEMO Specific Batch Features: nemo/BwForCluster_NEMO_Specific_Batch_Features.md
