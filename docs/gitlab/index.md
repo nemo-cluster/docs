@@ -242,10 +242,9 @@ gitlab_rails['object_store']['connection'] = {
   'aws_secret_access_key' => '<AWS_SECRET_ACCESS_KEY>',
   'host' => 's3.sub4.uni-freiburg.de',
   'aws_signature_version' => 2, # For creation of signed URLs. Set to 2 if provider does not support v4.
-  'endpoint' => 'https://s3host1.uni-freiburg.de', # default: nil - Useful for S3 compliant services such as DigitalOcean Spaces
-  'path_style' => false # (false) Use 'host/bucket_name/object' instead of 'bucket_name.host/object'
+  'endpoint' => 'https://s3.sub4.uni-freiburg.de', # default: nil - Useful for S3 compliant services such as DigitalOcean Spaces
+  'path_style' => false # false: Use 'host/bucket_name/object' instead of 'bucket_name.host/object'
 }
-#gitlab_rails['object_store']['storage_options'] = {}
 gitlab_rails['object_store']['proxy_download'] = false
 gitlab_rails['object_store']['objects']['artifacts']['bucket'] = "bucket-gitlab-artifacts"
 gitlab_rails['object_store']['objects']['dependency_proxy']['bucket'] = false
@@ -364,7 +363,7 @@ ubuntu:latest                          # name of the default docker image
 Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded!
 ```
 
-If you want to build and test Containers like Singularity, you need to enable privileged docker execution.
+If you want to build and test containers like Singularity, you need to enable privileged docker execution.
 And while editing `/etc/gitlab-runner/config.toml` you can increase concurrency (`concurrent`) if needed.
 
 ```toml
