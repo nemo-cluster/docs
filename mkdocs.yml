@@ -119,4 +119,6 @@ nav:
   - NEMO:
     - Betriebskonzept: betriebskonzept.md
     - TOMs: toms.md
+  #  - Worker Node Cheks: worker.md
   - Gitlab Installation: gitlab/index.md
+  - bwCloud Migration: bwcloud-migration.md
