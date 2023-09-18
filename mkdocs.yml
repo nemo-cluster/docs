@@ -119,5 +119,4 @@ nav:
   - NEMO:
     - Betriebskonzept: betriebskonzept.md
     - TOMs: toms.md
-  - bwSFS: bwsfs.md
   - Gitlab Installation: gitlab/index.md
