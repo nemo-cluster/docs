@@ -10,12 +10,12 @@ Instances which will be only accessed within the university can use an internal 
 Configure security group to allow SSH and HTTP(S).
 When using Letsencrypt HTTP needs to be available worldwide.
 
-
 ### Optional get AlmaLinux and Rockylinux on Clouds with CentOS Stream
 
 Use the CentOS Stream image and run the following as root. For Almalinux get migration tool first.
 
 Bash:
+
 ```bash
 curl https://raw.githubusercontent.com/rocky-linux/rocky-tools/main/migrate2rocky/migrate2rocky.sh -o migrate2rocky.sh
 chmod +x migrate2rocky.sh
@@ -27,6 +27,7 @@ reboot
 ### Install needed Packages
 
 Bash:
+
 ```bash
 yum install -y curl policycoreutils openssh-server perl
 # firewalld optional, when vm security group is insufficient
@@ -47,16 +48,17 @@ Most services like Gitlab runner and pages should work without SSL but should on
 
 Will Letsencrypt work with internal IP addresses and intra.uni-freiburg.de?
 
-
 ## Install Gitlab Omnibus
 
 Bash:
+
 ```bash
 curl -L "https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh" | sudo bash
 EXTERNAL_URL="https://gitlab.sub1.uni-freiburg.de" yum install -y gitlab-ee
 ```
 
 When your OS is not recognized you can try the following:
+
 ```bash
 curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh -o script.rpm.sh
 chmod +x script.rpm.sh
@@ -67,13 +69,13 @@ rm script.rpm.sh -f
 Login name is `root` the password is stored in `/etc/gitlab/initial_root_password`.
 Please change within 24h.
 
-
 ## Configure Gitlab Instance
 
 Gitlab is configured in file `/etc/gitlab/gitlab.rb` if not specified otherwise.
 
 If not specified during installation, change the name of your instance.
 `/etc/gitlab/gitlab.rb`:
+
 ```yaml
 external_url 'https://gitlab.sub1.uni-freiburg.de'
 ```
@@ -81,6 +83,7 @@ external_url 'https://gitlab.sub1.uni-freiburg.de'
 When using HTTPS set up Letsencrypt. For Uni Freiburg CA see [Gitlab SSL Configuration](https://docs.gitlab.com/omnibus/settings/ssl.html).
 
 `/etc/gitlab/gitlab.rb`:
+
 ```yaml
 letsencrypt['enable'] = true
 letsencrypt['contact_emails'] = ['my.name@rz.uni-freiburg'] # optional
@@ -88,10 +91,10 @@ letsencrypt['contact_emails'] = ['my.name@rz.uni-freiburg'] # optional
 
 Reconfigure Gitlab.
 Bash:
+
 ```bash
 gitlab-ctl reconfigure
 ```
-
 
 ### Security considerations
 
@@ -100,22 +103,21 @@ Add a second factor.
 After registering you phone app, consider adding U2F devices.
 
 Go to "Admin Area", "General" and change following boxes in "Sign-in restrictions":
+
 - check "Enforce two-factor authentication"
 - check "Enable admin mode"
 - uncheck "Allow password authentication for Git over HTTP(S)"
 - uncheck "Sign-up enabled" if you do not want Gitlab instance local users
 
-In box "Visibility and access controls" change "Enabled Git access protocols" to "Only SSH". 
-
+In box "Visibility and access controls" change "Enabled Git access protocols" to "Only SSH".
 
 ## Configure Access though External Services
 
 ### Onmiauth
 
-* Gitlab Documentation: [Generic OpenID Connect](https://docs.gitlab.com/ee/administration/auth/oidc.html)
-* Gitlab Documentation: [Gitlab.com](https://docs.gitlab.com/ee/integration/gitlab.html)
-* Gitlab Documentation: [Github](https://docs.gitlab.com/ee/integration/github.html)
-
+- Gitlab Documentation: [Generic OpenID Connect](https://docs.gitlab.com/ee/administration/auth/oidc.html)
+- Gitlab Documentation: [Gitlab.com](https://docs.gitlab.com/ee/integration/gitlab.html)
+- Gitlab Documentation: [Github](https://docs.gitlab.com/ee/integration/github.html)
 
 Omniauth allows Authentication through OpenID-Connect and Services like Giltab.com and Github.
 
@@ -127,36 +129,36 @@ gitlab_rails['omniauth_allow_single_sign_on'] = ['openid_connect', 'gitlab', 'gi
 gitlab_rails['omniauth_auto_link_user'] = ['openid_connect', 'gitlab', 'github']
 gitlab_rails['omniauth_external_providers'] = ['openid_connect', 'gitlab', 'github']
 gitlab_rails['omniauth_providers'] = [
-  { 'name' => 'openid_connect',
-    'label' => 'Keycloak RZ',
-    'args' => {
-      'name' => 'openid_connect',
-      'scope' => ['openid','profile','email'],
-      'response_type' => 'code',
-      'issuer' => 'https://keycloak.sub2.uni-freiburg.de/auth/realms/rdm-services',
-      'discovery' => true,
-      'client_auth_method' => 'query',
-      'uid_field' => 'sub',
-      'send_scope_to_token_endpoint' => 'true',
-      'client_options' => {
-        'identifier' => '<CLINET_ID>',
-        'secret' => '<CLIENT_SECRET>',
-        'redirect_uri' => 'https://gitlab.sub1.uni-freiburg.de/users/auth/openid_connect/callback'
-      }
-    }
-  },
-  {
-    "name" => "gitlab",
-    "app_id" => "<APP_ID>",
-    "app_secret" => "<APP_SECRET>",
-    "args" => { "scope" => "api" }
-  },
-    {
-    "name" => "github",
-    "app_id" => "<APP_ID>",
-    "app_secret" => "<APP_SECRET>",
-    "args" => { "scope" => "user:email" }
-  }
+{ 'name' => 'openid_connect',
+'label' => 'Keycloak RZ',
+'args' => {
+'name' => 'openid_connect',
+'scope' => ['openid','profile','email'],
+'response_type' => 'code',
+'issuer' => 'https://keycloak.sub2.uni-freiburg.de/auth/realms/rdm-services',
+'discovery' => true,
+'client_auth_method' => 'query',
+'uid_field' => 'sub',
+'send_scope_to_token_endpoint' => 'true',
+'client_options' => {
+'identifier' => '<CLINET_ID>',
+'secret' => '<CLIENT_SECRET>',
+'redirect_uri' => 'https://gitlab.sub1.uni-freiburg.de/users/auth/openid_connect/callback'
+}
+}
+},
+{
+"name" => "gitlab",
+"app_id" => "<APP_ID>",
+"app_secret" => "<APP_SECRET>",
+"args" => { "scope" => "api" }
+},
+{
+"name" => "github",
+"app_id" => "<APP_ID>",
+"app_secret" => "<APP_SECRET>",
+"args" => { "scope" => "user:email" }
+}
 ]
 ```
 
@@ -166,11 +168,12 @@ For Gitlab.com see this [document](https://docs.gitlab.com/ee/integration/gitlab
 
 ### LDAP
 
-* Gitlab Documentation: [LDAP](https://docs.gitlab.com/ee/administration/auth/ldap/)
+- Gitlab Documentation: [LDAP](https://docs.gitlab.com/ee/administration/auth/ldap/)
 
 Example for Uni Freiburg LDAP, add following lines to `/etc/gitlab/gitlab.rb`:
 
 `/etc/gitlab/gitlab.rb`:
+
 ```yaml
 gitlab_rails['ldap_enabled'] = true
 gitlab_rails['prevent_ldap_sign_in'] = false
@@ -178,9 +181,9 @@ gitlab_rails['ldap_servers'] = YAML.load <<-'EOS'
   main: # 'main' is the GitLab 'provider ID' of this LDAP server
     label: 'LDAP'
     host: 'ldap.sub3.uni-freiburg.de'
-    port: 636
+    port: 389 # or 636
     uid: 'uid'
-    encryption: 'simple_tls' # "start_tls" or "simple_tls" or "plain"
+    encryption: 'start_tls' # "start_tls" or "simple_tls" or "plain"
     verify_certificates: true
     smartcard_auth: false
     active_directory: false
@@ -200,36 +203,53 @@ EOS
 
 Add LDAP bind information to secrets file.
 Bash:
+
 ```bash
 gitlab-rake gitlab:ldap:secret:edit EDITOR=vim
 ```
 
 Add your bind information:
+
 ```yaml
 main:
-  bind_dn: 'uid=admin,ou=system'
-  password: '<PASSWORD>'
+  bind_dn: "uid=admin,ou=system"
+  password: "<PASSWORD>"
 ```
 
-To get a verified SSL connection, add the DFN chain to trusted certs directory.
+To get a verified SSL connection, it may be necessary to add the GEANT chain to trusted certs directory.
 
 Bash:
+
 ```bash
-curl https://pki.pca.dfn.de/dfn-ca-global-g2/pub/cacert/chain.txt -o /etc/gitlab/trusted-certs/dfn-chain.crt
+curl -Lo /etc/gitlab/trusted-certs/geant-chain.pem https://crt.sh/?d=2475254782
 ```
 
 Reconfigure Gitlab.
 Bash:
+
 ```bash
 gitlab-ctl reconfigure
 ```
 
+Check LDAP configuration.
+
+```bash
+gitlab-rake gitlab:ldap:check
+```
+
+Alternavively:
+
+```bash
+echo | /opt/gitlab/embedded/bin/openssl s_client -connect ldap.sub3.uni-freiburg.de:389 -starttls ldap -showcerts
+#echo | /opt/gitlab/embedded/bin/openssl s_client -connect ldap.sub3.uni-freiburg.de:636 -showcerts
+```
+
 ## Using External Object Stores
 
-* Gitlab Documentation: [Object Storage](https://docs.gitlab.com/ee/administration/object_storage.html)
+- Gitlab Documentation: [Object Storage](https://docs.gitlab.com/ee/administration/object_storage.html)
 
 First generate one S3 storage bucket for each service you want to use and generate the access keys and secrets.
-In most cases you can configure S3 storage in the corresponding  section of a service or you can use the special s3 storage block to configure most storage buckets in one place.
+In most cases you can configure S3 storage in the corresponding section of a service or you can use the special s3 storage block to configure most storage buckets in one place.
 For the sake of simplicity the following example uses the s3 storage block to configure most s3 buckets.
 If you don't want an object storage for a service, just add `false` instead of a bucket name.
 
@@ -279,11 +299,13 @@ registry['storage'] = {
 If you already have used file storage you can run the following to migrate to object storage.
 
 Pages:
+
 ```bash
 gitlab-rake gitlab:pages:deployments:migrate_to_object_storage
 ```
 
 LSF, Artifacts, Uploads, Packages:
+
 ```bash
 gitlab-rake gitlab:lfs:migrate
 gitlab-rake gitlab:artifacts:migrate
@@ -309,27 +331,30 @@ If you want to build containers with CI you will need temporary some GB of space
 Gitlab Documentation: [Install Docker](https://docs.docker.com/engine/install/centos/)
 
 Install dependencies and repo:
+
 ```bash
 yum install -y yum-utils
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 ```
 
 Install Docker Engine and containderd:
+
 ```bash
 yum install -y docker-ce docker-ce-cli containerd.io
 ```
 
 Enable Docker:
+
 ```bash
 systemctl enable --now docker.service
 ```
-
 
 ### Install Gitlab Runner
 
 Gitlab Documentation: [Runner Installation](https://docs.gitlab.com/runner/install/linux-repository.html)
 
 Bash:
+
 ```bash
 curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpcurl -L "https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh" | sudo bash
 yum install -y gitlab-runner
@@ -342,6 +367,7 @@ Gitlab Documentation: [Runner Registration](https://docs.gitlab.com/runner/regis
 For a shared runner, as administrator get the "registration token" by visiting the "Admin Area" and select Overview and Runners in the menu.
 
 On your runner instance run `gitlab-runner register` and enter the following the following:
+
 ```bash
 [root@gitlab-runner ~]# gitlab-runner register
 Runtime platform                                    arch=amd64 os=linux pid=11972 revision=de104fcd version=14.5.1
@@ -374,10 +400,10 @@ And while editing `/etc/gitlab-runner/config.toml` you can increase concurrency 
 ```
 
 Restart Runner:
+
 ```bash
 gitlab-runner restart
 ```
-
 
 ## Gitlab Pages
 
@@ -386,11 +412,13 @@ Gitlab Documentation: [Gitlab Pages](https://docs.gitlab.com/ee/administration/p
 ### Pages Running on the Same Server
 
 If you want to run pages on the same instance as Gitlab, you should add a wildcard DNS `A record`:
+
 ```bash
 *.sub1.uni-freiburg.de. 1800 IN A    <IP-ADDRESS-GITLAB>
 ```
 
 If you are using `https://gitlab.sub1.uni-freiburg.de` for your Gitlab instance, the domain for pages should be `http://<PAGES-SUBDOMAIN>.sub1.uni-freiburg.de`:
+
 ```yaml
 pages_external_url "http://pages.sub1.uni-freiburg.de" # not a subdomain of external_url
 ```
@@ -402,12 +430,14 @@ You can use a configuration for same or separate Pages server.
 If you use only one server you'll need to configure a second IP.
 
 `A records`:
+
 ```bash
 gitlab.sub1.uni-freiburg.de. 1800 IN A   <IP-ADDRESS-GITLAB>
 *.sub1.uni-freiburg.de.      1800 IN A   <IP-ADDRESS-PAGES>
 ```
 
 In your config add following lines:
+
 ```yaml
 pages_external_url "http://pages.sub1.uni-freiburg.de" # not a subdomain of external_url
 nginx['listen_addresses'] = ['<IP-ADDRESS-GITLAB>'] # The primary IP of the GitLab instance
@@ -416,6 +446,7 @@ gitlab_pages['external_http'] = ['<IP-ADDRESS-PAGES>:80'] # The secondary IPs fo
 ```
 
 Reconfigure Gitlab:
+
 ```bash
 gitlab-ctl reconfigure
 ```
@@ -427,11 +458,13 @@ If you want to run a separate Pages instance on a different server than your Git
 #### Changes on the Gitlab Server
 
 First, create a backup of the secrets file on the GitLab server:
+
 ```bash
 cp /etc/gitlab/gitlab-secrets.json /etc/gitlab/gitlab-secrets.json-$( date -I )
 ```
 
 Add a wildcard DNS `A record` for the Gitlab Pages domain:
+
 ```bash
 *.external1.uni-freiburg.de. 1800 IN A    <IP-ADDRESS-PAGES>
 ```
@@ -439,6 +472,7 @@ Add a wildcard DNS `A record` for the Gitlab Pages domain:
 The domain for Pages should be `http://<PAGES-EXTERNAL>.external1.uni-freiburg.de`:
 
 Change the following in your config:
+
 ```yaml
 pages_external_url "http://pages.external1.uni-freiburg.de"
 gitlab_pages['enable'] = false
@@ -447,6 +481,7 @@ pages_nginx['enable'] = false
 ```
 
 Reconfigure Gitlab:
+
 ```bash
 gitlab-ctl reconfigure
 ```
@@ -457,6 +492,7 @@ First you need to install a second Gitlab instance and do some basic configurati
 When the Pages server is ready, proceed with the configuration.
 
 Create a backup of the secrets file on the GitLab server:
+
 ```bash
 cp /etc/gitlab/gitlab-secrets.json /etc/gitlab/gitlab-secrets.json-$( date -I )
 
@@ -465,12 +501,15 @@ Copy `/etc/gitlab/gitlab-secrets.json` from the Gitlab server to the Pages serve
 ```
 
 Add the following to `/etc/gitlab/gitlab.rb`:
+
 ```yaml
 roles ['pages_role']
 pages_external_url "http://pages.external1.uni-freiburg.de"
 gitlab_pages['gitlab_server'] = 'https://gitlab.sub1.uni-freiburg.de'
 ```
+
 Reconfigure Gitlab:
+
 ```bash
 gitlab-ctl reconfigure
 ```
@@ -480,6 +519,7 @@ gitlab-ctl reconfigure
 If you want to use wildcard certificates for pages, copy your certificate and key to `/etc/gitlab/ssl`.
 
 Example:
+
 ```bash
 /etc/gitlab/ssl/pages.sub1.uni-freiburg.de.crt
 /etc/gitlab/ssl/pages.sub1.uni-freiburg.de.io.key
@@ -487,6 +527,7 @@ Example:
 
 If you used a different name, change the path in the config.
 `/etc/gitlab/gitlab.rb`:
+
 ```yaml
 pages_nginx['ssl_certificate'] = "/etc/gitlab/ssl/pages-nginx.crt"
 pages_nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/pages-nginx.key"
@@ -494,20 +535,22 @@ pages_nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/pages-nginx.key"
 
 To use `HTTPS` add this information to your config.
 `/etc/gitlab/gitlab.rb`:
+
 ```yaml
 pages_external_url "https://pages.sub1.uni-freiburg.de" # not a subdomain of external_url
 pages_nginx['redirect_http_to_https'] = true
 ```
 
 If you support custom domains add this line to your config:
+
 ```yaml
 gitlab_pages['external_https'] = ['<IP-ADDRESS-PAGES>:443', '[2001:db8::2]:443'] # The secondary IPs for the GitLab Pages daemon
 ```
 
-
 ### Pages Access Control
 
 For access control of your Pages, add the following line to your config:
+
 ```yaml
 gitlab_pages['access_control'] = true
 ```
