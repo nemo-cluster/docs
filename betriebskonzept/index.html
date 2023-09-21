@@ -1,0 +1,1349 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Documents and Documentation for NEMO and HPC at the University of Freiburg." name="description"/>
+<meta content="HPC Team Freiburg" name="author"/>
+<link href="https://docs.nemo.uni-freiburg.de/betriebskonzept/" rel="canonical"/>
+<link href=".." rel="prev"/>
+<link href="../toms/" rel="next"/>
+<link href="../img/nemo-favicon.png" rel="icon"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-9.3.2" name="generator"/>
+<title>Betriebskonzept - Documents and Documentation - NEMO and HPC</title>
+<link href="../assets/stylesheets/main.30068a00.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.85d0ee34.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/extra-style.8zy40714.min.css" rel="stylesheet"/></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#betriebskonzept">
+          Zum Inhalt
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Kopfzeile" class="md-header__inner md-grid">
+<a aria-label="Documents and Documentation - NEMO and HPC" class="md-header__button md-logo" data-md-component="logo" href="https://www.nemo.uni-freiburg.de" title="Documents and Documentation - NEMO and HPC">
+<img alt="logo" src="../img/nemo-logo.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Documents and Documentation - NEMO and HPC
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Betriebskonzept
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="red" data-md-color-media="" data-md-color-primary="red" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Suche" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Suche" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Suche" class="md-search__options">
+<button aria-label="Zurücksetzen" class="md-search__icon md-icon" tabindex="-1" title="Zurücksetzen" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/nemo-cluster/docs" title="Zum Repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Hauptnavigation" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="./">
+          
+  
+  NEMO
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../gitlab/">
+        
+  
+    
+  
+  Gitlab Installation
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../bwcloud-migration/">
+        
+  
+    
+  
+  bwCloud Migration
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Documents and Documentation - NEMO and HPC" class="md-nav__button md-logo" data-md-component="logo" href="https://www.nemo.uni-freiburg.de" title="Documents and Documentation - NEMO and HPC">
+<img alt="logo" src="../img/nemo-logo.svg"/>
+</a>
+    Documents and Documentation - NEMO and HPC
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/nemo-cluster/docs" title="Zum Repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    NEMO
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            NEMO
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Betriebskonzept
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Betriebskonzept
+  </span>
+</a>
+<nav aria-label="Inhaltsverzeichnis" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#einleitung">
+    Einleitung
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ziele-im-sinne-der-informationssicherheit">
+    Ziele im Sinne der Informationssicherheit
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#erwartete-ergebnisse">
+    Erwartete Ergebnisse
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dienstbeschreibung-hpc">
+    Dienstbeschreibung HPC
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#betriebsmodell-bwforcluster-nemo">
+    Betriebsmodell bwForCluster NEMO
+  </a>
+<nav aria-label="Betriebsmodell bwForCluster NEMO" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hardware-und-dienste">
+    Hardware und Dienste
+  </a>
+<nav aria-label="Hardware und Dienste" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ausgewahlte-dienste">
+    Ausgewählte Dienste
+  </a>
+<nav aria-label="Ausgewählte Dienste" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ssh">
+    SSH
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scheduler">
+    Scheduler
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#https">
+    HTTP(S)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dnbd3">
+    DNBD3
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ansible">
+    Ansible
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#openstack">
+    OpenStack
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dhcp">
+    DHCP
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monitoring">
+    Monitoring
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deployment">
+    Deployment
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#changemanagement">
+    Changemanagement
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#updates-und-sicherheit">
+    Updates und Sicherheit
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#parallel-und-home-speicher">
+    Parallel- und HOME-Speicher
+  </a>
+<nav aria-label="Parallel- und HOME-Speicher" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#workspaces">
+    Workspaces
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#netze">
+    Netze
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#zugang-zur-ressource">
+    Zugang zur Ressource
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kontingentierung">
+    Kontingentierung
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#administration">
+    Administration
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monitoring_1">
+    Monitoring
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#verantwortlichkeiten">
+    Verantwortlichkeiten
+  </a>
+<nav aria-label="Verantwortlichkeiten" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#maschinensaal-ii-msii">
+    Maschinensaal II (MSII)
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#referenzen">
+    Referenzen
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../toms/">
+<span class="md-ellipsis">
+    TOMs
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../gitlab/">
+<span class="md-ellipsis">
+    Gitlab Installation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bwcloud-migration/">
+<span class="md-ellipsis">
+    bwCloud Migration
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Inhaltsverzeichnis" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#einleitung">
+    Einleitung
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ziele-im-sinne-der-informationssicherheit">
+    Ziele im Sinne der Informationssicherheit
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#erwartete-ergebnisse">
+    Erwartete Ergebnisse
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dienstbeschreibung-hpc">
+    Dienstbeschreibung HPC
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#betriebsmodell-bwforcluster-nemo">
+    Betriebsmodell bwForCluster NEMO
+  </a>
+<nav aria-label="Betriebsmodell bwForCluster NEMO" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hardware-und-dienste">
+    Hardware und Dienste
+  </a>
+<nav aria-label="Hardware und Dienste" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ausgewahlte-dienste">
+    Ausgewählte Dienste
+  </a>
+<nav aria-label="Ausgewählte Dienste" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ssh">
+    SSH
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scheduler">
+    Scheduler
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#https">
+    HTTP(S)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dnbd3">
+    DNBD3
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ansible">
+    Ansible
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#openstack">
+    OpenStack
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dhcp">
+    DHCP
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monitoring">
+    Monitoring
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deployment">
+    Deployment
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#changemanagement">
+    Changemanagement
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#updates-und-sicherheit">
+    Updates und Sicherheit
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#parallel-und-home-speicher">
+    Parallel- und HOME-Speicher
+  </a>
+<nav aria-label="Parallel- und HOME-Speicher" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#workspaces">
+    Workspaces
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#netze">
+    Netze
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#zugang-zur-ressource">
+    Zugang zur Ressource
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kontingentierung">
+    Kontingentierung
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#administration">
+    Administration
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monitoring_1">
+    Monitoring
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#verantwortlichkeiten">
+    Verantwortlichkeiten
+  </a>
+<nav aria-label="Verantwortlichkeiten" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#maschinensaal-ii-msii">
+    Maschinensaal II (MSII)
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#referenzen">
+    Referenzen
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="betriebskonzept">Betriebskonzept</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gültig ab:</td>
+<td></td>
+</tr>
+<tr>
+<td>Version:</td>
+<td>0.4.4</td>
+</tr>
+<tr>
+<td>Datum:</td>
+<td>21.06.2021</td>
+</tr>
+</tbody>
+</table>
+<!-- !!! error  "TLP:RED"
+    Not for disclosure, restricted to participants only. Distribution outside this audience requires written permission from the originator. -->
+<div class="admonition attention">
+<p class="admonition-title">TLP:AMBER</p>
+<p>Limited disclosure, restricted to participants' organizations.
+Distribution outside this audience requires written permission from the originator.</p>
+</div>
+<!-- !!! important "TLP:GREEN"
+    Limited disclosure, restricted to the community/sector. Distribution outside this audience requires written permission from the originator. -->
+<!-- !!! note "TLP:WHITE"
+    Disclosure not limited. -->
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Datum</th>
+<th>Autor*innen</th>
+<th>Änderungen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.4.4</td>
+<td>21.06.2021</td>
+<td>MJ</td>
+<td>Anführungszeichen korrigiert.</td>
+</tr>
+<tr>
+<td>0.4.3</td>
+<td>25.05.2021</td>
+<td>MJ,DvS</td>
+<td>Kleinere Textkorrekturen. Testglossar zu Tooltipps geändert.</td>
+</tr>
+<tr>
+<td>0.4.2</td>
+<td>21.05.2021</td>
+<td>MJ</td>
+<td>Weitere Korrekturen, die durch die Konversion von Latex zu rST notwendig wurden. Fußnoten nach Punkt. Testweise Glossar erstellt.</td>
+</tr>
+<tr>
+<td>0.4.1</td>
+<td>21.05.2021</td>
+<td>JL</td>
+<td>Kleinere Korrekturen</td>
+</tr>
+<tr>
+<td>0.4.0</td>
+<td>20.04.2021</td>
+<td>MJ</td>
+<td>Einleitung gestrafft, theoretische Sicherheitszonen entfernt, zusätzliche Dokumente und Fußnoten, TOMs ausgelagert, Ziele und Ergebnisse nach vorne gezogen, neue Abschnitte zu Updates und Workspaces.</td>
+</tr>
+<tr>
+<td>0.3.2</td>
+<td>25.03.2021</td>
+<td>MJ</td>
+<td>Korrekturen, Ergänzungen.</td>
+</tr>
+<tr>
+<td>0.3.1</td>
+<td>19.03.2021</td>
+<td>DvS</td>
+<td>Korrekturen, Ergänzungen.</td>
+</tr>
+<tr>
+<td>0.3.0</td>
+<td>13.03.2021</td>
+<td>DvS</td>
+<td>Umstrukturierung des Textes, stärkere Verknüpfung von Sicherheit und Betriebsmodell, Ergänzungen.</td>
+</tr>
+<tr>
+<td>0.2.1</td>
+<td>09.03.2021</td>
+<td>BW, JL, DvS, MJ</td>
+<td>Anmerkungen und Korrekturen.</td>
+</tr>
+<tr>
+<td>0.2.0</td>
+<td>09.03.2021</td>
+<td>DvS</td>
+<td>Ergänzungen u.a. aus dem DFN-Paper zu Security-Domains und Absicherungskonzept.</td>
+</tr>
+<tr>
+<td>0.1.0</td>
+<td>06.03.2021</td>
+<td>MJ</td>
+<td>Erster Entwurf basierend auf Informationen des Betriebskonzepts de.NBI-FR und einer Vorlage von TOMs aus Tübingen.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="einleitung">Einleitung</h2>
+<p>Das Konzept, auf dessen Grundlage das bwForCluster NEMO betrieben wird,
+geht auf Überlegungen in der Abteilung eScience des Rechenzentrums der
+Universität Freiburg (RZ) zurück und wurde in verschiedenen Projekten
+iterativ entwickelt.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> Die für den bwForCluster NEMO beschaffte
+Hardware - Rechenknoten, Speichersystem für wissenschaftliche Daten und
+Infrastrukturserver - wird in Datenschränken untergebracht, die vom RZ
+in hierfür dedizierten Räumlichkeiten betrieben werden. Die
+Datenschränke werden vom RZ betreut und auf grundlegende
+Betriebsbereitschaft (Strom, Kühlung) überwacht. Es werden primär zwei
+große Speichersysteme genutzt, einerseits eine professionelle
+Storage-Appliance für administrative und Nutzer*innendaten,
+andererseits ein schnelles paralleles Dateisystem für die Nutzung durch
+Compute-Jobs. Auf den Infrastrukturservern laufen diverse Dienste, die
+skriptgesteuert mit Ansible-Rezepten installiert und konfiguriert
+werden. Die Rechenknoten werden via netzwerkbasiertem Remote-Boot von
+dedizierten Infrastrukturservern zustandslos betrieben. Auf diesen
+Knoten werden die Jobs der Wissenschaftler*innen ausgeführt. Besonders
+der Anspruch, Daten über längere Zeiträume hinweg in ihren Entstehungs-
+und Verarbeitungskontexten reproduzierbar zu halten, führte zu einer
+Komplementierung des traditionellen Betriebsmodells von HPC-Systemen um
+virtuelle Maschinen und Container. In diesen Virtualisierten (VFU) und
+Containerisieten (CFU) Forschungsumgebungen laufen die Anwendungen oder
+Umgebungen, die von den Wissenschafter*innen kontrolliert
+werden.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
+<p>Innerhalb dieser Forschungsumgebungen haben Wissenschaftler*innen die
+Freiheit, Forschungsdaten und deren Kontext so zu abstrahieren, dass sie
+auf anderen Systemen weiter ausgeführt und reproduziert werden können.
+Mit VFUs und CFUs werden Hardware, Software und Dienste so entkoppelt,
+dass für den bwForCluster NEMO ein verbessertes Management von
+Ressourcen erreicht wird. Ein Grundgedanke dieser konzeptionellen
+Vorüberlegungen ist die Aufteilung in Schichten. Der hier vorgestellte
+Dienst des bwForClusters NEMO deckt im Modell, das in<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>
+vorgestellt wurde, die Ebene der IT-Ressourcen ab. Für die
+Betriebsorganisation wird sie innerhalb des bwForClusters NEMO weiter
+differenziert in Schrank, Hardware und Dienste. Dieses Konzeptpapier
+beschreibt den Betrieb des bwForClusters NEMO.</p>
+<h2 id="ziele-im-sinne-der-informationssicherheit">Ziele im Sinne der Informationssicherheit</h2>
+<p>Kernanliegen des bwForClusters NEMO ist, Forscher*innen den Zugang zu
+Rechen- und Speicherkapazitäten zu geben. Als Schutzziel betrachtet, ist
+dies die Sicherstellung der <em>Verfügbarkeit</em> von Rechenressourcen, auf
+denen Forscher*innen ihre Rechenjobs ausführen. Als Dienstanbieter muss
+das bwForCluster NEMO eine Verfügbarkeit bieten, die
+Wissenschaftler*innen Big-Data-Analysen über das Maß selbst gemanagter
+oder dezentral in Forschungseinrichtung administrierten IT-Cluster
+hinaus ermöglicht.</p>
+<p>Für die Forscher*innen ist, um ihre Datenverarbeitung und Ergebnisse
+reproduzierbar zu halten, eine <em>Integrität</em> von Daten auf Speicherebene
+notwendig. Für Integrität von Daten auf der von ihnen betriebenen
+Verarbeitungsschicht sind sie selbst verantwortlich.</p>
+<p>Das Schutzziel <em>Vertraulichkeit</em> bezieht sich auf die Kontrolle des
+Zutritts, Zugangs und Zugriffs sowie die Trennung von Umgebungen. Mit
+der Abstraktion der Dienstschichten - Konzentration auf der Ebene der
+physischen und netztechnischen Infrastrukturen, der
+Clusteradministration in HPC, der Entkoppelung von logischen
+Nutzer-bezogenen Einheiten - sind Arbeitsteilungen möglich, die ein
+größeres Spektrum an Diensten für die Forschung in den Bereich des
+wirtschaftlich möglichen schieben. Sicherheitsrelevante Arbeitsbereiche
+können zentral von qualifiziertem Personal abgedeckt werden.</p>
+<p>Regulatorische Anforderungen an Forschung im Bereich der
+Neurowissenschaft, die in einigen Bereichen personenbezogene
+medizinische Daten mit hohem Schutzbedarf erzeugen, erfordern die
+Sicherstellung, diese Daten innerhalb eines kontrollierbaren Rechtsraums
+zu speichern. Die Souveränität wird auf die Kontrolle der physischen,
+organisatorischen und operativen Aspekte bezogen.</p>
+<p>Das bwForCluster NEMO ist mit diesen Überlegungen in der Lage, die aus
+den strategischen Zielen abgeleiteten Schutzziele mit eigenen Maßnahmen
+wirtschaftlich tragen und erreichen zu können. Das Dokument "Technisch
+Organisatorische Maßnahmen - bwForCluster NEMO" geht auf die einzelnen
+Schutzziele detaillierter ein.</p>
+<h2 id="erwartete-ergebnisse">Erwartete Ergebnisse</h2>
+<p>Mit dem Aufbau der Teildienste in technischen Schichten und der
+flexiblen Boot-Prozedur können die strategischen Ziele des bwForClusters
+NEMO mit den gegebenen Ressourcen erreicht und die
+Informationssicherheit gewahrt werden. Die Gliederung der Schichten
+erlaubt es, die Arbeitsbereiche zu trennen und die Risiken im Betrieb
+einzelner Schichten besser zu isolieren. Besonders die im
+Wissenschaftsbereich hohe Erwartung an Verfügbarkeit lässt sich besser
+erreichen. Die Zahl der "Single Points of Failures" ist besser
+kontrollierbar. Die Standardisierung in der Steuerung der Hardware
+reduziert die Komplexität im Betrieb, die den Wissenschaftler*innen
+gebotene Freiheit ist praktisch vollständig von der Betriebsschicht
+getrennt. Die Abstraktion reduziert Angriffsvektoren auf die
+Betriebsschicht, die durch Ereignisse auf der Ebene der
+Wissenschaftler*innen eröffnet werden.</p>
+<h2 id="dienstbeschreibung-hpc">Dienstbeschreibung HPC</h2>
+<p>Es liegt eine Dienstbeschreibung für das HPC-Computing-Angebot des
+Rechenzentrums im Rahmen des allgemeinen Servicekatalogs vor. Diese kann
+online von den Seiten des Rechenzentrums abgerufen werden.<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> Diese
+Dienstbeschreibung wird einem regelmäßigen Review-Prozess in der Runde
+der Abteilungsleiter*innen unterzogen.</p>
+<h2 id="betriebsmodell-bwforcluster-nemo">Betriebsmodell bwForCluster NEMO</h2>
+<p>Das Betriebsmodell beschreibt konkrete Schritte des Deployments und der
+täglichen Produktion des HPC-Clusters. Hierzu wird eine Kombination aus
+administrativen Infrastruktur (Server) und von den
+Wisschenschaftler*inenn zu Berechnungen verwendeten Rechenknoten
+eingesetzt.</p>
+<h3 id="hardware-und-dienste">Hardware und Dienste</h3>
+<p>Die installierte Hardware des bwForClusters NEMO besteht aus über 900
+Rechenknoten und einigen dedizierten Servern für NEMO-Dienste.<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup>
+Virtuelle Maschinen als VFUs und Container (CFUs) werden ebenfalls auf
+diesen Rechenknoten ausgeführt, wie reguläre Cluster-Jobs. Auf den
+Rechenknoten (ausgenommen Knoten für interaktive Nutzung) werden immer
+nur Jobs eines/einer Nutzers/Nutzerin ausgeführt. Zugang zum Cluster
+erfolgt über sogenannte Login-Knoten,</p>
+<div class="highlight"><pre><span></span><code>login1.nemo.uni-freiburg.de (alias login.nemo.uni-freiburg.de)
+login2.nemo.uni-freiburg.de
+</code></pre></div>
+<p>den Visualisierungsknoten (Vis),</p>
+<div class="highlight"><pre><span></span><code>vis1.nemo.uni-freiburg.de
+vis2.nemo.uni-freiburg.de
+</code></pre></div>
+<p>und über das Openstack-Dashboard. Die Zugangsknoten sind im öffentlichen
+Internet exponiert, welches jedoch auf das Belwü-Netz eingeschränkt
+wurde.<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup> Der Zugriff erfolgt primär über den SSH-Dienst. Beim
+Openstack-Dashboard wird der Transport mit HTTPS abgesichert.</p>
+<h4 id="ausgewahlte-dienste">Ausgewählte Dienste</h4>
+<h5 id="ssh">SSH</h5>
+<p>Dieser Dienst läuft auf allen Knoten und Servern. Mit ihm ist ein Login
+von Wissenschaftler*innen
+und Administrator*innen über die Eingabe von
+Nutzername und Dienst-Passwort oder einen SSH-Key möglich.</p>
+<h5 id="scheduler">Scheduler</h5>
+<p>Dieser Dienst ist auf dem Management-Server von NEMO aktiv und dient zum
+"Scheduling" (Verteilen nach vorgegebenem Algorithmus) von Jobs auf
+dem Cluster. Dazu sind auf den Rechenknoten Clients installiert, die
+Jobs und Ressourcenverbrauch protokollieren und diese Information an den
+Scheduler zurückmelden.</p>
+<h5 id="https">HTTP(S)</h5>
+<p>Das OpenStack-Dashboard ist als Webschnittstelle umgesetzt und setzt für
+den Zugriff auf HTTPS, um eine Absicherung bei der Nutzung über das
+öffentliche Belwü-Netz zu erreichen. Der Zugang erfolgt über Nutzername
+und Dienst-Passwort. Auf dem Deployment-Server wird HTTP verwendet, um
+Konfigurationen zu den Rechenknoten zu verteilen (Teil des
+iPXE-basierten Boot-Ablaufs und der individuellen Knotenkonfiguration).
+Die Deployment-Server sind nur im internen NEMO-Netz erreichbar.</p>
+<h5 id="dnbd3">DNBD3</h5>
+<p>Auf den Deployment-Servern laufen zwei
+Distributed-Network-Block-Device-3-Instanzen. Dieser Dienst stellt das
+Betriebssystem für Login-, Vis- und Rechenknoten zur Verfügung. Eine
+redundante Auslegung stellt sicher, dass bei Ausfall eine Servers das
+Cluster weiterhin mit dem Betriebssystem-Image versorgt wird.</p>
+<h5 id="ansible">Ansible</h5>
+<p>Auf dem Management-Server übernimmt Ansible das Ausrollen der Dienste
+und deren Konfiguration.</p>
+<h5 id="openstack">OpenStack</h5>
+<p>Mehrere Openstack-Server und -Dienste sind Cluster-intern für die
+Nutzung von VFUs zuständig.</p>
+<h5 id="dhcp">DHCP</h5>
+<p>Die IP-Adressen werden bei Rechen-, Login-, sowie Visualisierungsknoten
+über DHCP verteilt. Dieser Dienst wird von der Abteilung "Netze und
+Kommunikationsdienste" mithilfe der Appliance Infoblox betrieben.<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup></p>
+<h5 id="monitoring">Monitoring</h5>
+<p>Der Monitoring-Server empfängt und speichert alle Log- und
+Protokoll-Dateien. Hierbei werden Login-Versuche, kritische Fehler und
+Hardware-Parameter protokolliert und teilweise visualisiert. Für
+einfache Parameter wie die Temperatur eines Knotens sind Grenzwerte
+definiert. Bei Überschreitung dieser werden die Administrator*innen des
+Clusters per Mail verständigt.</p>
+<h3 id="deployment">Deployment</h3>
+<p>Die Dienste beim bwForCluster NEMO werden über Ansible-Rollen auf den
+Serverknoten aufgesetzt. Das ermöglicht ein schnelles und einfaches
+Ausrollen auf neuen Servern. Es müssen nur wenige Anpassungen
+durchgeführt werden.</p>
+<p>Das Boot- und Betriebssystem der Rechenknoten wird ebenfalls über
+Ansible generiert. Hierzu wird das CentOS-Vorlagen-Image mit Ansible
+konfiguriert und in in ein lesbares QCOW2-Image konvertiert.<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup> Mit
+dem in der Abteilung "eScience" entwickelten Boot-Framework wird dann
+das Image über das Netzwerk gestartet. Das Image wird dabei über das nur
+lesbare Blockdevice DNBD3 eingebunden. Für Schreiboperationen wird eine
+Copy-on-write-Schicht darüber gelegt, die bei jedem Boot eines Knotens
+frisch initialisiert wird. Alle neu generierten Images bekommen eine
+inkrementierte Revisionsnummer, so dass die Umgebung zum einen
+reproduzierbar ist, zum anderen bei Problemen mit einer Revision einfach
+auf eine ältere zurück gegriffen werden kann.</p>
+<p>Die Entscheidung, welche Systemversion, Revision und Konfiguation
+geladen wird, trifft der sogenannte Bootauswahlserver anhand der
+Zugehörigkeit der MAC-Adresse der Netzwerkkarte, über die der initiale
+Start lief, zu einer Boot-Gruppe.<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup> Diese Information wird jedesmal
+beim Boot ausgewertet. Die Boot-Gruppe entscheidet über die
+Konfiguration des Knotens. Sie wird verwendet, um spezielle Knoten zu
+konfigurieren, beispielsweise bei GPU-Knoten. Bei neuer Hardware durch
+Neubeschaffungen oder Ersatz bei Reparaturen muss lediglich die
+MAC-Adresse einer Gruppe zugeordnet werden. Neue Konfigurationen können
+ebenfalls schnell eingerichtet werden, da nur die zur Basisgruppe
+unterschiedliche Konfiguration vorgenommen werden muss.</p>
+<h3 id="changemanagement">Changemanagement</h3>
+<p>Der Deploymentprozess erleichtert das Changemanagement. Die
+Bereitstellung des Basissystems erlaubt schnelle Funktionstests, da beim
+Netzwerk-Boot lediglich die neuere Version angefahren werden muss. Die
+Hardwaregrundlage der Rechenknoten verändert sich im Laufe der
+Beschaffungszyklen, jedoch wird im Beschaffungsprozess und beim Design
+des Basissystems darauf geachtet, dass neue Knoten ohne Brüche in das
+Grundsystem übernommen werden können. Die Heterogenität wird durch den
+kontinuierlichen Austausch von Hardware verursacht, für die jeweils die
+zum Moment der Beschaffung günstigsten oder passendsten Komponenten
+verwendet werden.</p>
+<p>Für jede Geräteklasse wird ein Knoten reserviert, mit dem ausschließlich
+Tests durchgeführt werden. Erst wenn bei Änderungen am Grundsystem oder
+Patches auf den reservierten Knoten durchgetestet wurden, werden diese
+Änderungen auf den produktiven Knoten ausgerollt.</p>
+<h3 id="updates-und-sicherheit">Updates und Sicherheit</h3>
+<p>Bei allen Servern, die keinen direkten Zugriff durch die
+Wissenschaftler*innen erlauben, werden Updates bei den größeren
+Wartungen eingespielt, die üblicherweise ein bis zwei Mal im Jahr statt
+finden. Sollte eine außerordentliche Sicherheitslücke bestimmte Dienste
+betreffen, wird das Update sobald es verfügbar ist, eingespielt. Sollte
+hierzu ein Herunterfahren des Clusters notwendig werden, kann sich das
+Update um bis zu vier Tage verzögern. Das Vorgehen wird dann im
+eScience-Team unter Zuhilfenahme zusätzlicher IT-Experten diskutiert.
+Diese Wartungen werden an die Wissenschaftler*innen vorab kommuniziert.</p>
+<p>Bei den Login-, Vis- und Rechenknoten werden monatliche Updates
+eingespielt. Dabei findet ein Rolling-Update statt. Das Cluster wird
+offline genommen und neue Jobs können erst wieder starten, wenn die
+Rechenknoten mit der neuen Systemversion gebootet sind. Damit können
+alte Jobs noch zu Ende laufen, neue Jobs jedoch nur noch in der neuen
+Umgebung starten. Durch das <a href="#deployment">Deployment</a> und
+<a href="#changemanagement">Changemanagement</a> kann bei Problemen auf eine ältere
+Version gewechselt werden. Bei außerordentlichen Sicherheitslücken wird
+das Update, sobald es verfügbar ist, eingespielt und ausgerollt. Durch
+dieses Rolling-Update sind die Patches bei allen Knoten eingespielt,
+wenn der Job, der zum Zeitpunkt des Ausrollens noch die längste
+Restlaufzeit besitzt, endet und die vom Job verwendeten Knoten neu
+booten können. Da die derzeitige maximale Laufzeit der Jobs vier Tage
+beträgt, ist ein reguläres Update spätestens nach vier Tagen beendet.</p>
+<h3 id="parallel-und-home-speicher">Parallel- und HOME-Speicher</h3>
+<p>Die HOME-Verzeichnisse der Nutzer*innen liegen auf dem Isilon-Speicher
+der Universität.<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup> Für die aktuell verarbeiteten wissenschaftlichen
+Daten dient ein zentraler Parallelspeicher, der auf BeeGFS
+aufsetzt.<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">14</a></sup> Anders als der Isilon-Speicher ist der parallele Speicher
+nur durch ein RAID6 abgesichert und bietet keine weiteren Backups. Auf
+diesem Speicher sollten nur Daten liegen, die unmittelbar für
+Berechnungen benötigt werden. Für eine anschließende Speicherung der auf
+dem Cluster nicht mehr benötigten Daten wird bis Ende 2021 eine Lösung
+auf dem bwSFS angeboten.<sup id="fnref:15"><a class="footnote-ref" href="#fn:15">15</a></sup></p>
+<p>Der Parallelspeicher ist neben dem bwForCluster NEMO ebenfalls in der
+ATLAS-Umgebung eingebunden. Diese beinhaltet das ATLAS-Cluster und die
+ATLAS-VFU.<sup id="fnref:16"><a class="footnote-ref" href="#fn:16">16</a></sup> Dadurch können zusätzlich Nutzer*innen und
+Administrator*innen der Freiburger ATLAS-Gruppen auf diesen Speicher
+zugreifen.</p>
+<p>Nutzer*innen können in der Standardeinstellung nur ihre eigenen Daten
+einsehen und bearbeiten. Administrator*innen können alle Daten, sofern
+sie nicht Nutzer- oder Client-seitig verschlüsselt wurden, einsehen und
+bearbeiten. Beide Speicher werden nicht standardmäßig verschlüsselt.</p>
+<h4 id="workspaces">Workspaces</h4>
+<p>Die Daten, die auf dem parallelen Speicher liegen, werden für die
+Berechnungen der Wissenschaftler*innen benötigt. Das Management der
+Daten wird durch die Forscher*innen in sogenannten "Workspaces"
+durchgeführt.<sup id="fnref:17"><a class="footnote-ref" href="#fn:17">17</a></sup> Die Nutzer*innen müssen Workspaces anlegen, um den
+parallelen Speicher verwenden zu können. Dabei kann ein Workspace
+maximal 100 Tage gültig sein. Es besteht jedoch die Möglichkeit, jeden
+Workspace 99 mal 100 Tage zu verlängern. Die Wissenschaftler*innen
+werden 7 Tage vor Ablauf eines Workspaces per Mail informiert.</p>
+<p>Es wird empfohlen, für unterschiedliche Unterprojekte und separate
+Berechnungen eigene Workspaces anzulegen. Jeder Workspace kann damit in
+einem späteren Schritt als separate Einheit oder Objekt mit Metadaten
+versehen in einem Wissenschaftsspeicher wie bwSFS gesichert werden.
+Sinnvolle Einheiten/Workspaces müssen durch die Wissenschaftler*innen
+selbst definiert werden.</p>
+<h3 id="netze">Netze</h3>
+<p>Die Netzwerkanbindung der Serverschränke im Maschinensaal und der
+zentralen Switche wird von der Abteilung "eScience" in Zusammenarbeit
+mit der Abteilung "Netze und Kommunikationsdienste"
+(Netzwerkabteilung) im RZ durchgeführt. Diese Anbindung erlaubt eine
+Administration der Knoten in den Schränken von festgelegten IP-Adressen
+aus, die nur in Räumen der Universität Freiburg sowie über
+VPN-Verbindungen zugewiesen werden.</p>
+<p>Die internen Uni-Netzwerke für das bwForCluster NEMO, die VFUs, das
+ATLAS-Cluster und die Isilon sind voneinander getrennt und lassen nur
+Zugriff von zum Betrieb notwendigen Netzen zu. Welche dies im einzelnen
+sind, müssen vom jeweiligen Dienst erfragt werden.</p>
+<p>Das bwForCluster NEMO verwendet folgende Netze:</p>
+<div class="highlight"><pre><span></span><code>10.16.0.0/16          NEMO: Rechenknoten, Server und Parallelspeicher
+                            Login- und Vis-Knoten über interne Netzwerkschnittstelle
+132.230.222.0/24      NEMO: Login- und Visualisierungsknoten
+10.17.0.0/16          NEMO: CMS-VFU
+10.18.0.0/16          NEMO: ATLAS-VFU
+10.20.0.0/21          NEMO: NEMO-VFU (unused)
+10.20.8.0/21          NEMO: NEMO-VFU (unused)
+10.20.16.0/21         NEMO: NEMO-VFU (unused)
+10.20.24.0/21         NEMO: NEMO-VFU (unused)
+10.20.32.0/21         NEMO: NEMO-VFU (unused)
+10.20.40.0/21         NEMO: ATLAS-TEST-VFU
+</code></pre></div>
+<p>Obige Netze sind jeweils voneinander getrennt. Lediglich die ATLAS-VFU
+und ATLAS-TEST-VFU können zusätzlich auf das NEMO-Netz <code>10.16.0.0/16</code>
+zugreifen. Das Cluster kann ansonsten nur über die öffentliche
+IP-Adressen der Login- und Vis-Knoten erreicht werden. Die Rechenknoten
+sind mit mindestens 1 <abbr title="Gigabit Ethernet">GbE</abbr> versorgt.
+Server, die Dienste anbieten, sind mit mindestens
+zwei Anschlüssen mit 10 <abbr title="Gigabit Ethernet">GbE</abbr> über das Link Aggregation Control Protocol (LACP) an zwei
+Top-Level-Switche angebunden.<sup id="fnref:18"><a class="footnote-ref" href="#fn:18">18</a></sup> Zusätzlich sind alle Rechenknoten mit
+dem Hochgeschwindigkeitsnetzwerk "Omni-Path" mit 100 <abbr title="Gigabit pro Sekunde">Gbit/s</abbr>
+untereinander und dem wissenschaftlichen Parallelspeicher
+verbunden.<sup id="fnref:19"><a class="footnote-ref" href="#fn:19">19</a></sup></p>
+<h3 id="zugang-zur-ressource">Zugang zur Ressource</h3>
+<p>Zugang zum bwForCluster NEMO haben lediglich registrierte
+Forscher*innen. Antragsberechtigt sind nur Wissenschaftler*innen aus
+Baden-Württemberg. Die genauen Zugangskriterien und die einzelnen
+Schritte der Registrierungsprozedur sind im bwHPC-Wiki beschreiben.<sup id="fnref:20"><a class="footnote-ref" href="#fn:20">20</a></sup>
+Für das bwForCluster NEMO muss von dem/der Wissenschaftler*in ein
+separates Dienst-Passwort angelegt werden.</p>
+<p>Das Auslaufen und die Invalidierung von Accounts regelt jede Universität
+selbst. Der Nutzer hat danach keinen Zugriff mehr auf die Ressourcen.
+Die Daten der Nutzer*innen verbleiben jedoch so lange auf dem Cluster,
+bis die Ressource abgeschaltet wird oder die Anfrage einer berechtigten
+Person erfolgt. Es gibt derzeit keine festen Regeln diesbezüglich, so
+dass diese Frage einer genaueren Ausarbeitung Bedarf. Für das
+Nachfolgecluster, das voraussichtlich im Jahr 2022 in Betrieb gehen
+wird, wird eine Lösung erarbeitet. Die Universität stellt hierzu die
+folgenden Ordnungen zur Verfügung:</p>
+<ul>
+<li>Verwaltungs- und Benutzungsordnung (VBO).<sup id="fnref:21"><a class="footnote-ref" href="#fn:21">21</a></sup></li>
+<li>Benutzungsordnung für die vom Rechenzentrum der
+    Albert-Ludwigs-Universität angebotenen Netzdienste: (NBO).<sup id="fnref:22"><a class="footnote-ref" href="#fn:22">22</a></sup></li>
+<li>Netzordnung für das Freiburger Universitäts Netz: (NO).<sup id="fnref:23"><a class="footnote-ref" href="#fn:23">23</a></sup></li>
+</ul>
+<h3 id="kontingentierung">Kontingentierung</h3>
+<p>Die Wissenschaftler*innen sind im Sinne der gemeinschaftlichen
+DFG-Beantragung Stakeholder des bwForClusters NEMO. Zusätzlich gibt es
+Shareholder, die mit eigenen Mitteln Teile das Clusters mitfinanziert
+haben.<sup id="fnref:24"><a class="footnote-ref" href="#fn:24">24</a></sup> Diesen stehen zusätzliche Anteile am Cluster zur Verfügung.
+Die Regelung, wer wie viele Ressourcen des Clusters nutzen kann, wird
+über einen "Fairshare-Mechanismus" geregelt.<sup id="fnref:25"><a class="footnote-ref" href="#fn:25">25</a></sup> Dieser bestimmt,
+wann ein Job eines/r Wissenschaftlers/in starten kann. Hierzu wird von
+einer Gruppe jeweils der Verbrauch der letzten drei Monate mit ihrem
+"Share" verglichen. Ist der Verbrauch höher als der Share, der der
+Arbeitsgruppe zur Verfügung steht, werden die Jobs niedriger
+priorisiert, ist er niedriger als der verfügbare Share, werden die Jobs
+höher priorisiert. Wissenschaftler*innen können aber mehr Ressourcen
+verwenden, als ihnen aufgrund ihres Shares zustehen würden. Sie werden
+dadurch in Zukunft nur schlechter in der Warteschlange priorisiert. Es
+gibt lediglich eine maximale Anzahl an Ressourcen, die ein/e
+Wissenschaftler*in gleichzeitig in die Warteschlange stellen kann.</p>
+<h3 id="administration">Administration</h3>
+<p>Administrator*innen verfügen über erweiterte Rechte. Sie haben Zugriff
+auf alle Daten der Nutzer*innen, sofern diese nicht zusätzlich
+verschlüsselt werden. Der administrative Zugang wird bei Bedarf manuell
+gewährt und wird bei Ausscheiden, beziehungsweise wenn die Rechte nicht
+mehr benötigt werden, manuell entzogen. Derzeit wird ein Protokoll für
+die Administration entwickelt, das diesen Aspekt regelt. Die Einführung
+des Protokolls zum Ein- beziehungsweise Austritt von
+Administrator*innen ist für den Start des bwForClusters NEMO2 2022
+geplant.</p>
+<h3 id="monitoring_1">Monitoring</h3>
+<p>Das Monitoring überwacht den dauerhaften Betrieb mit Verfolgung der
+Ziele Verfügbarkeit, Vertraulichkeit und Integrität der Daten. Beim
+Monitoring werden Schränke, Infrastrukturkomponenten wie Netzwerk,
+Speichersysteme, Server und Rechenknoten überwacht. Neben der
+Überwachung der Hardware wird die Temperatur, Stromaufnahme und
+zusätzlich bei Schränken die Luftfeuchtigkeit kontrolliert. Die
+Nachverfolgung des Netzwerks findet in der Netzwerkabteilung und bei
+Schränken in der Abteilung "Allgemeiner Betrieb" statt. Strom und
+Kühlung werden zudem vom "Technischen Gebäugemanagement" (TGM)
+überwacht. Zusätzlich protokolliert der Monitoring-Server des Clusters
+mit Hilfe von Zabbix Hardwaredaten wie Temperatur und Defekte auf
+Knotenebene und schlägt beim Überschreiten von Grenzwerten per Mail
+Alarm.<sup id="fnref:26"><a class="footnote-ref" href="#fn:26">26</a></sup> Zabbix überprüft laufend, ob die Dienste, die auf den
+Servern laufen müssen, noch aktiv sind. Es wird allerdings nicht
+geprüft, ob die Dienste noch korrekt funktionieren.</p>
+<p>Außerdem werden Hardware- sowie Softwareprobleme, Login- und
+Zugriffsversuche über <code>rsyslog</code> lokal auf der SSD und für die von den
+Wissenschaftler*innen erreichbaren Knoten wie Login-, Vis- und
+Rechenknoten zusätzlich auf dem Monitoringserver in Dateien gespeichert.</p>
+<p>Der Speicherverbrauch im parallelen Dateisystem und den
+Home-Verzeichnissen wird mittels Quotas auf Nutzerebene durchgesetzt.
+Die Auslastung wird jeweils von den zuständigen Betreibern ermittelt.
+Bei Isilon ist das die Abteilung "Virtualisierung und
+Speichersysteme", beim BeeGFS machen das die Administrator*innen des
+bwForClusters NEMO. "Workspaces" auf dem parallelen
+Wissenschaftsspeicher BeeGFS haben eine Laufzeit von 100 Tagen und
+müssen von den Wissenschaftler*innen mit einem Kommando manuell
+verlängert werden. Erfolgt das nicht, werden die Daten endgültig nach
+einer Wartezeit von sieben Tagen gelöscht.</p>
+<h2 id="verantwortlichkeiten">Verantwortlichkeiten</h2>
+<p>Die Verantwortung für den Betrieb des bwForClusters NEMO liegt bei
+dem/der Leiter*in
+der Abteilung eScience. Diese/r berichtet der/dem Leiter*in
+des Rechenzentrums der Universität Freiburg.</p>
+<h3 id="maschinensaal-ii-msii">Maschinensaal II (MSII)</h3>
+<p>Der MSII sowie die darüber bereitgestellten Schränke werden von der
+Abteilung "Allgemeiner Betrieb" verantwortet. Das operative Geschäft
+sowie die organisatorischen Schnittstellen innerhalb des RZ sowie zu
+Nutzer*innen, die Ressourcen im Maschinensaal betreiben, werden in der
+"Maschinensaalbenutzungsordnung"<sup id="fnref:27"><a class="footnote-ref" href="#fn:27">27</a></sup> für den Maschinensaal
+beschrieben. Die Nutzung der Server-Schränke wird im Dienstkatalog
+"Machine-Hosting"<sup id="fnref:28"><a class="footnote-ref" href="#fn:28">28</a></sup> spezifiziert. Die
+Maschinensaalbenutzungsordnung bestimmt ebenfalls den physikalischen
+Zugriff der Administrator*innen des Clusters auf die Schränke und die
+darin eingebauten Maschinen.</p>
+<h2 id="referenzen">Referenzen</h2>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Hierzu entsteht derzeit das Dokument
+"Compute-Forschungsinfrastrukturen: HPC". <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>BAUER, Jonathan, Dirk von SUCHODOLETZ, Jeannette VOLLMER und
+Helena RASCHE, 2019. Game of Templates: Deploying and (re-)using
+Virtualized Research Environments in High-Performance and
+High-Throughput Computing. In: Michael JANCZYK, Dirk von SUCHODOLETZ
+und Bernd WIEBELT (Hrsg.), <em>Proceedings of the 5<sup>th</sup> bwHPC Symposium:
+HPC Activities in Baden-Württemberg. Freiburg, September 2018</em>. TLP,
+Tübingen. 2019. S. 245-262 <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p>SUCHODOLETZ, Dirk von, Jonathan BAUER, Oleg ZHARKOV, Susanne
+MOCKEN und Björn GRÜNING, 2020. Lessons learned from Virtualized
+Research Environments in today's scientific compute infrastructures.
+In: <em>E-Science-Tage 2019: Data to Knowledge</em>. Heidelberg: heiBOOKS.
+März 2020. S. 88-81.
+ISBN <a href="https://worldcat.org/isbn/978-3-948083-14-4">978-3-948083-14-4</a> <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:4">
+<p>SUCHODOLETZ, Dirk von und Jonathan BAUER, 2020. ViCE - Creating
+Uniform Approach to Large-Scale Research Infrastructures. In:
+<em>E-Science-Tage 2019: Data to Knowledge</em>. Heidelberg: heiBOOKS. März
+2020. S. 218-222.
+ISBN <a href="https://worldcat.org/isbn/978-3-948083-14-4">978-3-948083-14-4</a> <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:5">
+<p>MEIER, Konrad, Björn GRÜNING, Clemens BLANK, Michael JANCZYK und
+Dirk von SUCHODOLETZ, 2017. Virtualisierte wissenschaftliche
+Forschungsumgebungen und die zukünftige Rolle der Rechenzentren. In:
+<em>10. DFN-Forum Kommunikationstechnologien, 30.-31. Mai 2017, Berlin,
+Gesellschaft für Informatik eV (GI)</em>. 2017. S. 145-154 <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+<li id="fn:6">
+<p>MEIER, Konrad, 2017. <em>Infrastrukturkonzepte für virtualisierte
+wissenschaftliche Forschungsumgebungen</em>. phdthesis.
+Albert-Ludwigs-Universität Freiburg im Breisgau <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">↩</a></p>
+</li>
+<li id="fn:7">
+<p>ESCIENCE TEAM, 2016. <em>Cluster Betrieb: High Performance Computing</em>
+[online]. techreport. Rechenzentrum der Universität Freiburg.
+Verfügbar unter:
+<a href="https://www.rz.uni-freiburg.de/inhalt/dokumente/pdfs/dienstbeschreibung-hpc">https://www.rz.uni-freiburg.de/inhalt/dokumente/pdfs/dienstbeschreibung-hpc</a> <a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">↩</a></p>
+</li>
+<li id="fn:8">
+<p>Die aktuelle Hardware des bwForClusters NEMO im zentralen Wiki
+dokumentiert:
+<a href="https://wiki.bwhpc.de/e/BwForCluster_NEMO_Hardware_and_Architecture#Compute_and_Special_Purpose_Nodes">https://wiki.bwhpc.de/e/BwForCluster_NEMO_Hardware_and_Architecture#Compute_and_Special_Purpose_Nodes</a>,
+besucht am 19.04.2021. <a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">↩</a></p>
+</li>
+<li id="fn:9">
+<p>Der Zugriff ist auf die IPv4-Prefixe des Belwü-Netzes beschränkt:
+<a href="https://bgpview.io/asn/553">https://bgpview.io/asn/553</a>, besucht am 16.04.2021. <a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">↩</a></p>
+</li>
+<li id="fn:10">
+<p>Webseite Infoblox: <a href="https://www.infoblox.com/">https://www.infoblox.com/</a>, besucht am
+20.04.2021. <a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">↩</a></p>
+</li>
+<li id="fn:11">
+<p>Derzeit wird CentOS7 als Betriebssystem eingesetzt. Das
+Nachfolgecluster wird RHEL8 oder ein binärkompatibles Derivat
+einsetzen. <a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">↩</a></p>
+</li>
+<li id="fn:12">
+<p>BAUER, Jonathan, Manuel MESSNER, Michael JANCZYK, Dirk von
+SUCHODOLETZ, Bernd WIEBELT und Helena RASCHE, 2019. A Sorting Hat
+For Clusters: Dynamic Provisioning of Compute Nodes for Colocated
+Large Scale Computational Research Infrastructures. In: Michael
+JANCZYK, Dirk von SUCHODOLETZ und Bernd WIEBELT (Hrsg.),
+<em>Proceedings of the 5<sup>th</sup> bwHPC Symposium: HPC Activities in
+Baden-Württemberg. Freiburg, September 2018</em>. TLP, Tübingen. 2019.
+S. 217-229 <a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">↩</a></p>
+</li>
+<li id="fn:13">
+<p>STORAGE UND VIRTUALISIERUNGSGRUPPE, 2019. <em>Speichersysteme für
+die Universität</em> [online]. techreport. Rechenzentrum der
+Universität Freiburg. Verfügbar unter:
+<a href="https://www.rz.uni-freiburg.de/inhalt/dokumente/pdfs/speichersysteme">https://www.rz.uni-freiburg.de/inhalt/dokumente/pdfs/speichersysteme</a> <a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">↩</a></p>
+</li>
+<li id="fn:14">
+<p>Webseite zum Parallelspeicher BeeGFS: <a href="https://www.beegfs.io/">https://www.beegfs.io/</a>,
+besucht am 20.04.2021. <a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 14 in the text">↩</a></p>
+</li>
+<li id="fn:15">
+<p>Die Dokumente zu bwSFS werden derzeit noch erarbeitet. Diese
+werden nachgereicht. <a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 15 in the text">↩</a></p>
+</li>
+<li id="fn:16">
+<p>Webseite von ATLAS-BFG:
+<a href="https://www.hpc.uni-freiburg.de/atlas-bfg">https://www.hpc.uni-freiburg.de/atlas-bfg</a>, besucht am 20.04.2021. <a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 16 in the text">↩</a></p>
+</li>
+<li id="fn:17">
+<p>Github-Repo zu Workspaces:
+<a href="https://github.com/holgerBerger/hpc-workspace">https://github.com/holgerBerger/hpc-workspace</a>, besucht am
+19.04.2021 <a class="footnote-backref" href="#fnref:17" title="Jump back to footnote 17 in the text">↩</a></p>
+</li>
+<li id="fn:18">
+<p>Wiki-Eintrag zu LACP:
+<a href="https://de.wikipedia.org/wiki/Link_Aggregation">https://de.wikipedia.org/wiki/Link_Aggregation</a>, besucht am
+19.02.2021. <a class="footnote-backref" href="#fnref:18" title="Jump back to footnote 18 in the text">↩</a></p>
+</li>
+<li id="fn:19">
+<p>Eintrag zu Omni-Path:
+<a href="https://de.wikipedia.org/wiki/Intel_Omni-Path">https://de.wikipedia.org/wiki/Intel_Omni-Path</a>, besucht am
+19.02.2021. <a class="footnote-backref" href="#fnref:19" title="Jump back to footnote 19 in the text">↩</a></p>
+</li>
+<li id="fn:20">
+<p>Registrierungsprozedur im Wiki:
+<a href="https://wiki.bwhpc.de/e/BwForCluster_User_Access">https://wiki.bwhpc.de/e/BwForCluster_User_Access</a>, besucht am
+20.04.2021. <a class="footnote-backref" href="#fnref:20" title="Jump back to footnote 20 in the text">↩</a></p>
+</li>
+<li id="fn:21">
+<p>UNIVERSITÄT FREIBURG, 1981. <em>Verwaltungs- und Benutzungsordnung:
+(VBO)</em> [online]. techreport. Universität Freiburg. Verfügbar
+unter: <a href="https://www.hpc.uni-freiburg.de/content/legalstuff/vbo.pdf">https://www.hpc.uni-freiburg.de/content/legalstuff/vbo.pdf</a> <a class="footnote-backref" href="#fnref:21" title="Jump back to footnote 21 in the text">↩</a></p>
+</li>
+<li id="fn:22">
+<p>UNIVERSITÄT FREIBURG, 1996. <em>Benutzungsordnung für die vom
+Rechenzentrum der Albert-Ludwigs-Universität angebotenen
+Netzdienste: (NBO)</em> [online]. techreport. Universität Freiburg.
+Verfügbar unter:
+<a href="https://www.hpc.uni-freiburg.de/content/legalstuff/nbo.pdf">https://www.hpc.uni-freiburg.de/content/legalstuff/nbo.pdf</a> <a class="footnote-backref" href="#fnref:22" title="Jump back to footnote 22 in the text">↩</a></p>
+</li>
+<li id="fn:23">
+<p>UNIVERSITÄT FREIBURG, 1996. <em>Netzordnung für das Freiburger
+Universitäts Netz: (NO)</em> [online]. techreport. Universität
+Freiburg. Verfügbar unter:
+<a href="https://www.hpc.uni-freiburg.de/content/legalstuff/no.pdf">https://www.hpc.uni-freiburg.de/content/legalstuff/no.pdf</a> <a class="footnote-backref" href="#fnref:23" title="Jump back to footnote 23 in the text">↩</a></p>
+</li>
+<li id="fn:24">
+<p>SUCHODOLETZ, Dirk von, Stefan WESNER und Gerhard SCHNEIDER, 2016.
+Überlegungen zu laufenden Cluster-Erweiterungen in bwHPC. In: Dirk
+von SUCHODOLETZ, Janne Chr. SCHULZ, Jan LEENDERTSE, Hartmut HOTZEL
+und Martin WIMMER (Hrsg.), <em>Kooperation von Rechenzentren:
+Governance und Steuerung - Organisation, Rechtsgrundlagen,
+Politik</em>. De Gruyter. 2016. S. 331-342.
+ISBN <a href="https://worldcat.org/isbn/978-3-11-045888-6">978-3-11-045888-6</a> <a class="footnote-backref" href="#fnref:24" title="Jump back to footnote 24 in the text">↩</a></p>
+</li>
+<li id="fn:25">
+<p>Erklärung des Fairshare-Mechanismus Anhand der Anleitung des
+Schedulers Moab:
+<a href="http://docs.adaptivecomputing.com/9-1-3/suite/help.htm#topics/moabWorkloadManager/fairness/fairnessoverview.html">http://docs.adaptivecomputing.com/9-1-3/suite/help.htm#topics/moabWorkloadManager/fairness/fairnessoverview.html</a>,
+besucht am 20.04.2021. <a class="footnote-backref" href="#fnref:25" title="Jump back to footnote 25 in the text">↩</a></p>
+</li>
+<li id="fn:26">
+<p>Zabbix Monitoring-Lösung: <a href="https://www.zabbix.com">https://www.zabbix.com</a>, besucht am
+20.04.2021. <a class="footnote-backref" href="#fnref:26" title="Jump back to footnote 26 in the text">↩</a></p>
+</li>
+<li id="fn:27">
+<p>SCHULZ, Janne Chr., Dirk von SUCHODOLETZ, Ulrich GEHRING,
+Willibald MEYER und Jan LEENDERTSE, 2020.
+<em>Maschinensaalbenutzungsordnung des Rechenzentrums der Universität
+Freiburg: Richtlinien für das Hosting und Housing von Hardware in
+den Räumen desRechenzentrums der Universität Freiburg</em> [online].
+techreport. Rechenzentrum der Universität Freiburg. Verfügbar unter:
+<a href="https://www.rz.uni-freiburg.de/inhalt/dokumente/pdfs/msbo">https://www.rz.uni-freiburg.de/inhalt/dokumente/pdfs/msbo</a> <a class="footnote-backref" href="#fnref:27" title="Jump back to footnote 27 in the text">↩</a></p>
+</li>
+<li id="fn:28">
+<p>SUCHODOLETZ, Dirk von, Ulrich GEHRING und Jan LEENDERTSE, 2020.
+<em>Machine-Hosting: Bereitstellung von Rackspace in den Maschinensälen
+des RZ. externe Version</em> [online]. techreport. Rechenzentrum der
+Universität Freiburg. Verfügbar unter:
+<a href="https://www.rz.uni-freiburg.de/inhalt/dokumente/pdfs/dienstbeschr-machine-hosting">https://www.rz.uni-freiburg.de/inhalt/dokumente/pdfs/dienstbeschr-machine-hosting</a> <a class="footnote-backref" href="#fnref:28" title="Jump back to footnote 28 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      Letztes Update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 21, 2023</span>
+</small>
+</div>
+</article>
+</div>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Zurück zum Seitenanfang
+          </button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2021 eScience, RZ, Uni Freiburg
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.nemo.uni-freiburg.de" rel="noopener" target="_blank" title="www.nemo.uni-freiburg.de">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg data-name="Ebene 3" height="192.88841" id="Ebene_3" inkscape:version="1.0.2 (e86c870879, 2021-01-15)" sodipodi:docname="nemo-gold.svg" version="1.1" viewbox="0 0 341.3623 192.88841" width="341.3623" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+<metadata id="metadata13">
+<rdf:rdf>
+<cc:work rdf:about="">
+<dc:format>image/svg+xml</dc:format>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+</cc:work>
+</rdf:rdf>
+</metadata>
+<defs id="defs11"></defs>
+<sodipodi:namedview bordercolor="#666666" borderopacity="1" gridtolerance="10" guidetolerance="10" id="namedview9" inkscape:current-layer="Ebene_3" inkscape:cx="93.479834" inkscape:cy="97.088167" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-height="1115" inkscape:window-maximized="0" inkscape:window-width="2081" inkscape:window-x="0" inkscape:window-y="0" inkscape:zoom="2.675" objecttolerance="10" pagecolor="#ffffff" showgrid="false"></sodipodi:namedview>
+<title id="title2">nemo_3.0</title>
+<path d="m 52.456096,30.728167 c 28.47,21 67.390004,18.7 98.620004,5.72 9.52,-4 18.27,-9.23 27.55,-13.67 17.66,-8.45 36.8,-12.09 56.33,-11.7 45.5,0.9 109.88,28.22 106.26,83.16 -3.62,54.940003 -72.7,85.140003 -119.54,94.350003 -57,11.23 -121,0.13 -171.180004,-29.38 -31,-18.24 -55.0000002,-47 -49.78000025,-85.470003 a 79,79 0 0 1 38.15000025,-57.05 c 18.99,-11.2599997 52.81,-20.5099997 73.900004,-15.0999997 -43.910004,0.36 -94.530004,14.9999997 -105.4600042,63.6999997 -6.29,28 5.7000002,55.000003 27.6000002,72.110003 39.37,30.76 98.000004,37.75 146.410004,33.44 35.26,-3.13 70.4,-13.28 101,-30.34 23.18,-12.91 48.86,-34.38 43.5,-64.250003 -7.29,-40.65 -57.3,-63 -94.36,-56.77 -30.16,5.08 -54.78,23.59 -83.68,32 a 114.7,114.7 0 0 1 -42,4.55 91.24,91.24 0 0 1 -30.470004,-7.94 c -6.4,-3.03 -21.89,-10.59 -22.85,-17.36 z m 8.85,37.43 h -20.31 v 57.840003 h 17.21 l -0.11,-19.24 c 0,-3.74 -0.43,-11.120003 -0.75,-15.930003 h 0.21 a 95.65,95.65 0 0 0 7.7,13.900003 l 14,21.27 h 20.21 V 68.158167 h -17.32 l 0.21,19.24 c 0,3.74 0.43,11.12 0.75,15.930003 h -0.21 a 105.64,105.64 0 0 0 -7.7,-13.900003 z M 158.0561,112.95817 h -26.2 v -9.94 h 21.6 V 90.078167 h -21.6 v -8.87 h 25.66 v -13 h -44.84 v 57.840003 h 45.33 v -13 z m 63.71,13 h 17.53 V 68.158167 h -23.52 l -11.33,27.37 h -0.21 l -11.45,-27.37 h -23.62 v 57.840003 h 17.31 l -0.11,-24.05 c 0,-4.000003 -0.54,-12.000003 -0.86,-15.610003 h 0.21 a 106.74,106.74 0 0 0 4.6,13.58 l 7.06,15.930003 h 13.36 l 7.06,-15.930003 a 106.69,106.69 0 0 0 4.6,-13.58 h 0.21 c -0.32,3.63 -0.75,11.65 -0.75,15.610003 z m 67.91,-13.54 h -39.1 v 13.58 h 39.1 z m 0,-25.550003 c 0,6.63 -1.92,11.44 -4.92,14.330003 -3.53,3.31 -8.66,4.49 -14.65,4.49 -5.99,0 -11.23,-1.18 -14.65,-4.49 -3.1,-2.890003 -4.92,-7.700003 -4.92,-14.330003 0,-6.63 1.82,-11.33 4.92,-14.22 3.42,-3.31 8.66,-4.49 14.65,-4.49 5.99,0 11.12,1.18 14.65,4.49 3.03,2.89 4.92,7.59 4.92,14.22 z m -14.65,0 c 0,-4.49 -0.43,-6.95 -1.6,-8.23 a 4.43,4.43 0 0 0 -3.31,-1.28 4.68,4.68 0 0 0 -3.44,1.23 c -1.18,1.28 -1.6,3.74 -1.6,8.23 0,4.49 0.43,7.06 1.6,8.34 a 4.68,4.68 0 0 0 3.42,1.28 4.43,4.43 0 0 0 3.31,-1.28 c 1.27,-1.24 1.66,-3.91 1.66,-8.29 z" id="path6" style="fill:#ffffff;fill-opacity:1"></path>
+</svg>
+</a>
+<a class="md-social__link" href="https://github.com/nemo-cluster" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="https://t.me/nemo_cluster" rel="noopener" target="_blank" title="t.me">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8Zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769Z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.uni-freiburg.de" rel="noopener" target="_blank" title="www.uni-freiburg.de">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg height="136pt" version="1.1" viewbox="0 0 96 136" width="96pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<clippath id="clip1">
+<path d="M 49 0.300781 L 71 0.300781 L 71 136 L 49 136 Z M 49 0.300781 "></path>
+</clippath>
+<clippath id="clip2">
+<path d="M 75 80 L 95.199219 80 L 95.199219 87 L 75 87 Z M 75 80 "></path>
+</clippath>
+</defs>
+<g id="surface1">
+<g clip-path="url(#clip1)" clip-rule="nonzero">
+<path d="M 53.96875 123.421875 L 50.089844 123.421875 L 50.089844 135.519531 L 70.0625 135.519531 L 70.0625 130.566406 L 62.109375 130.566406 L 62.109375 123.808594 L 58.308594 123.808594 L 58.308594 130.566406 L 53.96875 130.566406 Z M 70.0625 104.402344 L 63.609375 108.820312 C 62.765625 109.394531 61.957031 109.933594 61.417969 110.316406 C 60.726562 107.4375 58.808594 105.476562 55.734375 105.476562 C 51.855469 105.476562 49.972656 108.398438 49.972656 113.3125 C 49.972656 115.847656 50.011719 118.882812 50.089844 120.496094 L 70.0625 120.496094 L 70.0625 115.542969 L 62.265625 115.542969 L 62.265625 115.347656 L 70.0625 110.433594 Z M 56.234375 110.742188 C 57.886719 110.742188 59 111.96875 59 113.890625 C 59 114.429688 59 115.042969 58.921875 115.542969 L 53.816406 115.542969 C 53.777344 115.082031 53.738281 114.582031 53.738281 114.042969 C 53.738281 112.007812 54.660156 110.742188 56.234375 110.742188 M 70.0625 89.757812 L 66.105469 89.757812 L 66.105469 97.09375 L 61.726562 97.09375 L 61.726562 90.101562 L 57.964844 90.101562 L 57.964844 97.09375 L 53.96875 97.09375 L 53.96875 89.757812 L 50.089844 89.757812 L 50.089844 102.046875 L 70.0625 102.046875 Z M 70.136719 81 L 50.015625 81 L 50.015625 86.171875 L 70.136719 86.171875 Z M 63.839844 60.992188 C 61.691406 60.992188 60 62.105469 59.386719 64.332031 L 59.34375 64.332031 C 58.578125 62.335938 56.886719 61.261719 54.96875 61.261719 C 51.820312 61.261719 49.972656 63.449219 49.972656 68.828125 C 49.972656 71.476562 50.089844 74.742188 50.089844 76.777344 L 70.0625 76.777344 C 70.0625 73.703125 70.140625 71.09375 70.140625 69.632812 C 70.140625 63.066406 66.835938 60.992188 63.839844 60.992188 M 55.699219 66.523438 C 57.425781 66.523438 58.273438 68.097656 58.273438 70.441406 C 58.273438 70.710938 58.273438 71.285156 58.230469 71.859375 L 53.46875 71.859375 C 53.46875 71.207031 53.429688 70.402344 53.429688 69.785156 C 53.429688 67.289062 54.351562 66.523438 55.699219 66.523438 M 63.839844 66.214844 C 65.492188 66.214844 66.605469 67.328125 66.605469 69.746094 C 66.605469 70.515625 66.566406 71.285156 66.488281 71.859375 L 61.382812 71.859375 C 61.34375 71.359375 61.34375 70.59375 61.34375 70.171875 C 61.34375 67.671875 62.074219 66.214844 63.839844 66.214844 M 62.34375 39.34375 L 50.089844 39.34375 L 50.089844 44.222656 L 61.726562 44.222656 C 64.605469 44.222656 66.296875 45.414062 66.296875 48.445312 C 66.296875 51.25 64.992188 52.710938 61.917969 52.710938 L 50.089844 52.710938 L 50.089844 57.664062 L 63.03125 57.664062 C 67.566406 57.664062 70.40625 54.785156 70.40625 48.714844 C 70.40625 42.148438 66.796875 39.34375 62.34375 39.34375 M 70.0625 19.101562 L 63.609375 23.519531 C 62.765625 24.097656 61.957031 24.632812 61.417969 25.019531 C 60.726562 22.136719 58.808594 20.179688 55.734375 20.179688 C 51.855469 20.179688 49.972656 23.097656 49.972656 28.015625 C 49.972656 30.550781 50.011719 33.582031 50.089844 35.195312 L 70.0625 35.195312 L 70.0625 30.242188 L 62.265625 30.242188 L 62.265625 30.050781 L 70.0625 25.132812 Z M 56.234375 25.441406 C 57.886719 25.441406 59 26.671875 59 28.589844 C 59 29.128906 59 29.742188 58.921875 30.242188 L 53.816406 30.242188 C 53.777344 29.78125 53.738281 29.28125 53.738281 28.742188 C 53.738281 26.707031 54.660156 25.441406 56.234375 25.441406 M 68.949219 0.390625 L 59.421875 0.390625 L 59.421875 5.347656 L 65.683594 5.347656 C 65.914062 6.035156 66.03125 6.882812 66.03125 7.726562 C 66.03125 10.992188 63.917969 13.21875 60.078125 13.21875 C 56.117188 13.21875 53.890625 10.644531 53.890625 7.152344 C 53.890625 5.230469 54.277344 3.464844 55.007812 1.695312 L 50.742188 0.773438 C 50.050781 2.925781 49.742188 5.113281 49.742188 7.265625 C 49.742188 14.332031 54.507812 18.480469 60.460938 18.480469 C 67.066406 18.480469 70.40625 14.0625 70.40625 8.148438 C 70.40625 5.308594 69.867188 2.773438 68.949219 0.390625 " style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;"></path>
+</g>
+<path d="M 37.316406 117.558594 L 24.984375 117.558594 L 24.984375 122.46875 L 36.699219 122.46875 C 39.597656 122.46875 41.296875 123.667969 41.296875 126.722656 C 41.296875 129.542969 39.984375 131.011719 36.890625 131.011719 L 24.984375 131.011719 L 24.984375 136 L 38.011719 136 C 42.574219 136 45.433594 133.101562 45.433594 126.992188 C 45.433594 120.382812 41.800781 117.558594 37.316406 117.558594 M 45.085938 92.566406 L 24.984375 92.566406 L 24.984375 97.398438 L 33.449219 97.359375 C 35.539062 97.359375 37.199219 97.320312 38.398438 97.242188 L 38.398438 97.28125 C 37.042969 97.898438 35.769531 98.59375 34.570312 99.367188 L 24.984375 105.207031 L 24.984375 111.890625 L 45.085938 111.890625 L 45.085938 107.097656 L 35.152344 107.097656 C 33.566406 107.097656 32.5625 107.136719 31.59375 107.214844 L 31.59375 107.175781 C 32.714844 106.671875 34.144531 105.976562 35.265625 105.28125 L 45.085938 99.253906 Z M 45.09375 81 L 25.007812 81 L 25 86.171875 L 45.09375 86.171875 L 45.09375 81 " style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;"></path>
+<g clip-path="url(#clip2)" clip-rule="nonzero">
+<path d="M 75.023438 86.167969 L 95.148438 86.167969 L 95.148438 80.996094 L 75.023438 80.996094 Z M 75.023438 86.167969 " style=" stroke:none;fill-rule:nonzero;fill:rgb(76.991272%,7.034302%,17.796326%);fill-opacity:1;"></path>
+</g>
+<path d="M 0 86.167969 L 20.105469 86.167969 L 20.105469 81.003906 L 0 81.003906 Z M 0 86.167969 " style=" stroke:none;fill-rule:nonzero;fill:rgb(76.991272%,7.034302%,17.796326%);fill-opacity:1;"></path>
+</g>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+<script src="../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+</body>
+</html>
